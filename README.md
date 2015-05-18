@@ -14,3 +14,7 @@ I may be emailed at frakman@hotmail.com
 Thank you in advance.
 
 
+versions:
+Xcode: 6.3.1
+OSX: Yosemite: 10.10.3
+iOS: 8.1.3
