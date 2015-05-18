@@ -27,6 +27,7 @@
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer12;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer13;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer14;
+@property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer15;
 
 @property (nonatomic,strong) NSString *gameSelection;
 @property (nonatomic,strong) NSString *background;

@@ -21,6 +21,8 @@ float delay =2.0;
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     NSLog(@"Waiting...");
+    application.applicationSupportsShakeToEdit = YES;
+
     [NSThread sleepForTimeInterval:delay];
 
     return YES;
