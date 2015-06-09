@@ -11,9 +11,7 @@
 #import "UIView+Glow.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <LIFXKit/LIFXKit.h>
-
-
-
+#import "UIImageAverageColorAddition.h"
 
 
 @interface myTableViewController ()
@@ -24,8 +22,14 @@
 
 @implementation myTableViewController
 
+
+
+
+NSTimer *timer;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //messages = [[NSMutableArray alloc] init];
     
     // Auto Max Volume
     MPMusicPlayerController *musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
@@ -65,6 +69,8 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:YES];
+    
     NSLog(@"entering %s() ",__FUNCTION__);
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gamefxicon5.png"]];
     [self.navigationItem.titleView startGlowingWithColor:[UIColor blackColor] intensity:0.5];
@@ -79,10 +85,57 @@
     
     //LFXHSBKColor *color = [LFXHSBKColor colorWithHue:275 saturation:1.0 brightness:0.85];
   
-    [localNetworkContext.allLightsCollection setColor:color];
+    [localNetworkContext.allLightsCollection setColor:color overDuration:2];
+    
+    //spawn average colour effect thread
+    timer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target: self selector:@selector(myTick:) userInfo: nil repeats:YES];
 
 
 }
+
+- (UIImage *)pb_takeSnapshot
+{
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, YES, 0);
+    
+    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:YES];
+    
+     //old way [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+-(void)myTick:(NSTimer *)timer
+{
+    //NSLog(@"myTick..");
+    //take screenshot
+    
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    CGRect rect = [keyWindow bounds];
+    UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [keyWindow.layer renderInContext:context];
+    UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    
+    //UIImage *capturedScreen = [self pb_takeSnapshot ];
+    UIColor* averageColor = [capturedScreen mergedColor];
+    CGFloat red, green, blue;
+    CGFloat hue, saturation, brightness, alpha;
+    LFXHSBKColor *lifxColor;
+    
+    [averageColor getRed:&red green:&green blue:&blue alpha:NULL];
+    [averageColor getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+    LFXNetworkContext *localNetworkContext = [[LFXClient sharedClient] localNetworkContext];
+    [localNetworkContext.allLightsCollection setPowerState:LFXPowerStateOn];
+    lifxColor = [LFXHSBKColor colorWithHue:(hue*360) saturation:0.7 brightness:0.85];
+    [localNetworkContext.allLightsCollection setColor:lifxColor overDuration:2];
+
+    
+}
+
 
 #pragma mark - Table view data source
 
@@ -211,6 +264,8 @@
         
     }
     
+
+    
     
     return cell;
 }
@@ -286,8 +341,6 @@
     return YES;
 }
 
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -336,7 +389,9 @@
        
         
     }
-    
+    [timer invalidate];
+    timer = nil;
+
 }
 
 

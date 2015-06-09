@@ -222,10 +222,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224BC97B1B1917A400D684B1 /* ExternalCode */ = {
+			isa = PBXGroup;
+			children = (
+				22528B111AF8831600D959F2 /* UIImageAverageColorAddition.h */,
+				22528B121AF8831600D959F2 /* UIImageAverageColorAddition.m */,
+				22FD7E3D1AE0520100A0EA3E /* UIView+Glow.h */,
+				22FD7E3E1AE0520100A0EA3E /* UIView+Glow.m */,
+				22EE1D8B1ADEA9AF009344DF /* YMCAudioPlayer.m */,
+				22EE1D8A1ADEA9AF009344DF /* YMCAudioPlayer.h */,
+			);
+			name = ExternalCode;
+			sourceTree = "<group>";
+		};
 		22F55BE81ADDA35E001718F1 = {
 			isa = PBXGroup;
 			children = (
 				22528B081AF81FEC00D959F2 /* libz.dylib */,
+				22F55BF31ADDA35E001718F1 /* GameFX */,
+				22F55C101ADDA35E001718F1 /* GameFXTests */,
+				22F55BF21ADDA35E001718F1 /* Products */,
 				22528B061AF81FE300D959F2 /* SystemConfiguration.framework */,
 				22528B041AF81DD600D959F2 /* LIFXKit.framework */,
 				22528AE81AF4487900D959F2 /* QuartzCore.framework */,
@@ -233,9 +249,6 @@
 				22EE1D881ADEA80D009344DF /* CoreGraphics.framework */,
 				22EE1D861ADEA7FD009344DF /* UIKit.framework */,
 				22F55C271ADDABBB001718F1 /* AVFoundation.framework */,
-				22F55BF31ADDA35E001718F1 /* GameFX */,
-				22F55C101ADDA35E001718F1 /* GameFXTests */,
-				22F55BF21ADDA35E001718F1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,16 +265,11 @@
 			isa = PBXGroup;
 			children = (
 				22F55C011ADDA35E001718F1 /* Main.storyboard */,
-				22528B111AF8831600D959F2 /* UIImageAverageColorAddition.h */,
-				22528B121AF8831600D959F2 /* UIImageAverageColorAddition.m */,
-				22FD7E3D1AE0520100A0EA3E /* UIView+Glow.h */,
-				22FD7E3E1AE0520100A0EA3E /* UIView+Glow.m */,
-				22EE1D8B1ADEA9AF009344DF /* YMCAudioPlayer.m */,
-				22EE1D8A1ADEA9AF009344DF /* YMCAudioPlayer.h */,
-				22F55C201ADDA873001718F1 /* GameViewController.h */,
-				22F55C211ADDA873001718F1 /* GameViewController.m */,
 				22F55BF81ADDA35E001718F1 /* AppDelegate.h */,
 				22F55BF91ADDA35E001718F1 /* AppDelegate.m */,
+				224BC97B1B1917A400D684B1 /* ExternalCode */,
+				22F55C201ADDA873001718F1 /* GameViewController.h */,
+				22F55C211ADDA873001718F1 /* GameViewController.m */,
 				22F55C1D1ADDA4CD001718F1 /* myTableViewController.h */,
 				22F55C1E1ADDA4CD001718F1 /* myTableViewController.m */,
 				22F55C041ADDA35E001718F1 /* Images.xcassets */,
@@ -410,6 +418,7 @@
 				TargetAttributes = {
 					22F55BF01ADDA35E001718F1 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 7G2GKABE9F;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -664,6 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/frak/Documents/LIFXKit-cnsblnuqrwxhuicgndijkotbdhas/Build/Products/Release-iphoneos",
@@ -678,7 +688,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f3aac710-beb4-4152-972b-a8c672678c1d";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -689,6 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/frak/Documents/LIFXKit-cnsblnuqrwxhuicgndijkotbdhas/Build/Products/Release-iphoneos",
@@ -703,7 +714,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f3aac710-beb4-4152-972b-a8c672678c1d";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

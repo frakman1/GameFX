@@ -753,7 +753,7 @@ CGFloat gIncrement=0.01;
     NSLog(@"\n gameSelection:%@",self.gameSelection);
     NSLog(@"\n background:%@",self.background);
     
-    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Create vertical volume slider                                x,   y   width, height
     UISlider *myslider = [[UISlider alloc] initWithFrame:CGRectMake(225, 270, 160, 30)];
     myslider.value=1;
@@ -775,9 +775,14 @@ CGFloat gIncrement=0.01;
     
     //make it respond to changes
     [myslider addTarget:self action:@selector(updateslider:) forControlEvents:UIControlEventValueChanged];
-    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Todo: Replace above volume implementation with this better one:
+    //MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
+    //[volumeSlider addSubview:volumeView];
+    //[volumeView sizeToFit];
+
     // This section makes the app play in the background//
-    /////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     NSError *setCategoryError = nil;
     BOOL success = [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
@@ -895,6 +900,8 @@ CGFloat gIncrement=0.01;
 
 -(void) viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:YES];
+    
     NSLog(@"viewWillAppear. gameSelection:%@",self.gameSelection);
     
     //set up background image
