@@ -12,6 +12,8 @@
 
 
 @interface GameViewController : UIViewController
+{
+}
 @property (nonatomic, strong) YMCAudioPlayer *audioPlayer;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer1;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer2;
@@ -69,6 +71,8 @@
 @property BOOL scrubbing;
 
 @property NSTimer *timer;
+
+
 
 
 @end

@@ -60,6 +60,7 @@
 		226FAEA01AEFFE52006C5A95 /* desert_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 226FAE9E1AEFFE52006C5A95 /* desert_on.png */; };
 		226FAEA11AEFFE52006C5A95 /* desert_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 226FAE9F1AEFFE52006C5A95 /* desert_off.png */; };
 		226FAEA31AF00179006C5A95 /* desert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 226FAEA21AF00179006C5A95 /* desert.mp3 */; };
+		2277CC361B2A510C0004D415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2277CC341B2A510C0004D415 /* Main.storyboard */; };
 		2279D3C21B06DA940002E6C7 /* boom_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C01B06DA940002E6C7 /* boom_on.png */; };
 		2279D3C31B06DA940002E6C7 /* boom_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C11B06DA940002E6C7 /* boom_off.png */; };
 		2279D3C51B06E0440002E6C7 /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C41B06E0440002E6C7 /* explosion.mp3 */; };
@@ -79,7 +80,6 @@
 		22F55BF71ADDA35E001718F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BF61ADDA35E001718F1 /* main.m */; };
 		22F55BFA1ADDA35E001718F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BF91ADDA35E001718F1 /* AppDelegate.m */; };
 		22F55BFD1ADDA35E001718F1 /* GameFX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BFB1ADDA35E001718F1 /* GameFX.xcdatamodeld */; };
-		22F55C031ADDA35E001718F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F55C011ADDA35E001718F1 /* Main.storyboard */; };
 		22F55C051ADDA35E001718F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F55C041ADDA35E001718F1 /* Images.xcassets */; };
 		22F55C081ADDA35E001718F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F55C061ADDA35E001718F1 /* LaunchScreen.xib */; };
 		22F55C141ADDA35E001718F1 /* GameFXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F55C131ADDA35E001718F1 /* GameFXTests.m */; };
@@ -157,6 +157,7 @@
 		226FAE9E1AEFFE52006C5A95 /* desert_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert_on.png; sourceTree = "<group>"; };
 		226FAE9F1AEFFE52006C5A95 /* desert_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert_off.png; sourceTree = "<group>"; };
 		226FAEA21AF00179006C5A95 /* desert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = desert.mp3; sourceTree = "<group>"; };
+		2277CC351B2A510C0004D415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2279D3C01B06DA940002E6C7 /* boom_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom_on.png; sourceTree = "<group>"; };
 		2279D3C11B06DA940002E6C7 /* boom_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom_off.png; sourceTree = "<group>"; };
 		2279D3C41B06E0440002E6C7 /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
@@ -180,7 +181,6 @@
 		22F55BF81ADDA35E001718F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22F55BF91ADDA35E001718F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		22F55BFC1ADDA35E001718F1 /* GameFX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameFX.xcdatamodel; sourceTree = "<group>"; };
-		22F55C021ADDA35E001718F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22F55C041ADDA35E001718F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22F55C071ADDA35E001718F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		22F55C0D1ADDA35E001718F1 /* GameFXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameFXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,7 +264,7 @@
 		22F55BF31ADDA35E001718F1 /* GameFX */ = {
 			isa = PBXGroup;
 			children = (
-				22F55C011ADDA35E001718F1 /* Main.storyboard */,
+				2277CC341B2A510C0004D415 /* Main.storyboard */,
 				22F55BF81ADDA35E001718F1 /* AppDelegate.h */,
 				22F55BF91ADDA35E001718F1 /* AppDelegate.m */,
 				224BC97B1B1917A400D684B1 /* ExternalCode */,
@@ -471,7 +471,6 @@
 				226FAE9B1AEFF4A5006C5A95 /* coin_off.png in Resources */,
 				2244AAFE1AEEA85E002977D9 /* guns.mp3 in Resources */,
 				22494E141AE6BC5300C80AD2 /* Fireplace sound effects.mp3 in Resources */,
-				22F55C031ADDA35E001718F1 /* Main.storyboard in Resources */,
 				2260220F1AE597E7005DFC24 /* flashpoint.mp3 in Resources */,
 				2279D3C51B06E0440002E6C7 /* explosion.mp3 in Resources */,
 				22E9CC661AF178A000DF698B /* sink.mp3 in Resources */,
@@ -483,6 +482,7 @@
 				221208D31AE159B70059BCB1 /* cure4.mp3 in Resources */,
 				224872191AEF005500C3C046 /* wahwah.mp3 in Resources */,
 				221208D01AE159B70059BCB1 /* cure2.mp3 in Resources */,
+				2277CC361B2A510C0004D415 /* Main.storyboard in Resources */,
 				226FAE9A1AEFF4A5006C5A95 /* coin_on.png in Resources */,
 				226FAE991AEFF4A5006C5A95 /* cash.mp3 in Resources */,
 				226FAE951AEFEF8C006C5A95 /* machikoro.mp3 in Resources */,
@@ -568,10 +568,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		22F55C011ADDA35E001718F1 /* Main.storyboard */ = {
+		2277CC341B2A510C0004D415 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				22F55C021ADDA35E001718F1 /* Base */,
+				2277CC351B2A510C0004D415 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

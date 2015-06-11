@@ -10,6 +10,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 #import "UIView+Glow.h"
+#import <MediaPlayer/MediaPlayer.h>
+
 //#import <QuartzCore/QuartzCore.h>
 
 //#import "SimpleAudioEngine.h"
@@ -17,7 +19,6 @@
 
 #import <LIFXKit/LIFXKit.h>
 #import "UIImageAverageColorAddition.h"
-
 
 @interface GameViewController ()
 {
@@ -84,26 +85,59 @@ CGFloat gIncrement=0.01;
 
 #pragma mark -
 
-
+// periodically flicker the light intensity for a pulsing effect
 -(void)onTick:(NSTimer *)timer
 {
+    float pkpower = 0;
+    float avgpower = 0;
+    double pkpercentage = 0;
+    double avgpercentage = 0;
     NSLog(@"Tick..");
     if (!isPaused)
     {
-    NSLog(@"gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
-    gBrightness= gBrightness+gIncrement;      if (gBrightness>0.99) gIncrement=gIncrement*(-1.0);if (gBrightness<0.4) gIncrement=gIncrement*(-1.0);
-    NSLog(@"new gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
-    //gHue = gHue+5;               if (gHue>360) gHue=0;if (gHue<0) gHue=360;
-    //gSaturation = 0.85; if (gSaturation>1) gSaturation=1;if (gSaturation<0) gSaturation=0;
-    
-    gColor = [LFXHSBKColor colorWithHue:gColor.hue saturation:gColor.saturation brightness:gBrightness];
-    
-    LFXNetworkContext *localNetworkContext = [[LFXClient sharedClient] localNetworkContext];
-    [localNetworkContext.allLightsCollection setColor:gColor];
-    
-    // change test UIview background colour to indicate change on device screen
-    self.audioPlayerBackgroundLayer.backgroundColor = [UIColor colorWithHue:(gColor.hue/360.0) saturation:gColor.saturation brightness:gBrightness alpha:1];
+        // calculate volume meter levels
+        //-------------------------------
+        
+        [self.audioPlayer.audioPlayer updateMeters];
+        
+        for (int i=0; i<self.audioPlayer.audioPlayer.numberOfChannels; i++)
+        {
+            pkpower = [self.audioPlayer.audioPlayer peakPowerForChannel:i];
+            avgpower = [self.audioPlayer.audioPlayer averagePowerForChannel:i];
+            pkpercentage = pow (10, (0.05 * pkpower));
+            avgpercentage = pow (10, (0.05 * avgpower));
+            
+            //Log the peak and average power
+            NSLog(@"channel:%d pkPower:%0.2f avgPower:%0.2f pkPct:%0.2f avgPct:%0.2f", i, pkpower,avgpower,pkpercentage,avgpercentage);
+            
+        }
+        
+        //----------------------------------------------------------------------------------------------------------------------------------------------
+        
+        
+        // control light brightness
+        //-------------------------
+        NSLog(@"gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
+        gBrightness= gBrightness+gIncrement;      if (gBrightness>0.99) gIncrement=gIncrement*(-1.0);if (gBrightness<0.4) gIncrement=gIncrement*(-1.0);
+        NSLog(@"new gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
+        //gHue = gHue+5;               if (gHue>360) gHue=0;if (gHue<0) gHue=360;
+        //gSaturation = 0.85; if (gSaturation>1) gSaturation=1;if (gSaturation<0) gSaturation=0;
+        
+        gColor = [LFXHSBKColor colorWithHue:gColor.hue saturation:gColor.saturation brightness:avgpercentage+0.2];
+        //gColor = [LFXHSBKColor colorWithHue:(pkpercentage*360) saturation:avgpercentage brightness:avgpercentage+0.3];
+        //gColor = [LFXHSBKColor colorWithHue:gColor.hue saturation:gColor.saturation brightness:gBrightness];
+
+        
+        LFXNetworkContext *localNetworkContext = [[LFXClient sharedClient] localNetworkContext];
+        [localNetworkContext.allLightsCollection setColor:gColor];
+        
+        // change test UIview background colour to indicate change on device screen
+        self.audioPlayerBackgroundLayer.backgroundColor = [UIColor colorWithHue:(gColor.hue/360.0) saturation:gColor.saturation brightness:avgpercentage alpha:1];
+        
     }
+    
+    
+
 }
 
 
@@ -735,8 +769,6 @@ CGFloat gIncrement=0.01;
     NSLog(@"going back...");
     //[self.audioPlayer stopAudio];
     
-
-    
 }
 
 
@@ -754,14 +786,15 @@ CGFloat gIncrement=0.01;
     NSLog(@"\n background:%@",self.background);
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Create vertical volume slider                                x,   y   width, height
-    UISlider *myslider = [[UISlider alloc] initWithFrame:CGRectMake(225, 270, 160, 30)];
-    myslider.value=1;
     
+    // setup volume bar, rotate it, bring it to the front
+    //x,   y   width, height
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(225, 270, 160, 30)];
     CGAffineTransform sliderRotation = CGAffineTransformIdentity;
     sliderRotation = CGAffineTransformRotate(sliderRotation,-(M_PI / 2));
-    myslider.transform = sliderRotation;
-    [self.view addSubview:myslider];
+    volumeView.transform = sliderRotation;
+    [self.view addSubview:volumeView];
+    [self.view bringSubviewToFront:volumeView];
     
     
     // create volume level max and min icons
@@ -773,14 +806,6 @@ CGFloat gIncrement=0.01;
     [self.view addSubview:imgView];
     [self.view addSubview:imgView2];
     
-    //make it respond to changes
-    [myslider addTarget:self action:@selector(updateslider:) forControlEvents:UIControlEventValueChanged];
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Todo: Replace above volume implementation with this better one:
-    //MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:volumeSlider.bounds] autorelease];
-    //[volumeSlider addSubview:volumeView];
-    //[volumeView sizeToFit];
-
     // This section makes the app play in the background//
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -904,6 +929,8 @@ CGFloat gIncrement=0.01;
     
     NSLog(@"viewWillAppear. gameSelection:%@",self.gameSelection);
     
+    self.audioPlayer.audioPlayer.meteringEnabled = YES;
+    
     //set up background image
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:self.background] drawInRect:self.view.bounds];
@@ -1015,6 +1042,8 @@ CGFloat gIncrement=0.01;
     //spawn pulsing effect thread
     t = [NSTimer scheduledTimerWithTimeInterval: 0.1 target: self selector:@selector(onTick:) userInfo: nil repeats:YES];
     isPaused=NO;
+    
+    
 }
 
 
