@@ -357,7 +357,7 @@ LFXHSBKColor *gcamLifxColor;
     [self.audioMeter beginAudioMeteringWithCallback:^(double value) {
         double dBValue = 10 * log10(value);
         double sanval = fabs(dBValue);
-        double myval = (value+0.1) * 3; if (myval > 1) myval =1;
+        double myval = (value+0.1) * 5; if (myval > 1) myval =1;
         NSLog(@"Value: %0.2f   dBValue:%0.2f  sanval:%0.2f  myval:%0.2f", value,dBValue,sanval,myval);
         //gcamLifxColor = [LFXHSBKColor colorWithHue:gcamLifxColor.hue saturation:gcamLifxColor.saturation brightness:myval];
         gcamLifxColor = [gcamLifxColor colorWithBrightness:myval];
@@ -652,7 +652,7 @@ LFXHSBKColor *gcamLifxColor;
                 [self.myLabel.backgroundColor getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
                 LFXNetworkContext *localNetworkContext = [[LFXClient sharedClient] localNetworkContext];
                 gcamLifxColor = [LFXHSBKColor colorWithHue:(hue*360) saturation:saturation brightness:brightness];
-                [localNetworkContext.allLightsCollection setColor:gcamLifxColor overDuration:0.5];
+                //[localNetworkContext.allLightsCollection setColor:gcamLifxColor overDuration:0.5];
                 //********
               
                 //[[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];

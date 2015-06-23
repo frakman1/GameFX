@@ -65,6 +65,9 @@ NSTimer *t2;
 BOOL gLightState2=YES;
 LFXHSBKColor *gColor2;
 
+
+- (BOOL) prefersStatusBarHidden {return YES;}
+
 -(BOOL)canBecomeFirstResponder {
     return YES;
 }
