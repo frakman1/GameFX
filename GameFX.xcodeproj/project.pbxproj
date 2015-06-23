@@ -29,6 +29,14 @@
 		2248721A1AEF005500C3C046 /* bang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 224872181AEF005500C3C046 /* bang.mp3 */; };
 		2248721D1AEF04CC00C3C046 /* tumbleweed_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248721B1AEF04CC00C3C046 /* tumbleweed_on.png */; };
 		2248721E1AEF04CC00C3C046 /* tumbleweed_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248721C1AEF04CC00C3C046 /* tumbleweed_off.png */; };
+		224936871B3388CE00699D59 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224936861B3388CE00699D59 /* AVCamPreviewView.m */; };
+		2249368A1B3389A500699D59 /* myCamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224936891B3389A500699D59 /* myCamViewController.m */; };
+		224937171B38AB2600699D59 /* myMotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224937161B38AB2600699D59 /* myMotionViewController.m */; };
+		2249371C1B38AC9C00699D59 /* LightDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 224937191B38AC9C00699D59 /* LightDataSource.m */; };
+		2249371D1B38AC9C00699D59 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2249371A1B38AC9C00699D59 /* green_button.png */; };
+		2249371E1B38AC9C00699D59 /* red_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2249371B1B38AC9C00699D59 /* red_button.png */; };
+		224937231B38C6C000699D59 /* SCAudioMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 224937221B38C6C000699D59 /* SCAudioMeter.m */; };
+		224937261B38C90800699D59 /* myMicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224937251B38C90800699D59 /* myMicViewController.m */; };
 		22494E141AE6BC5300C80AD2 /* Fireplace sound effects.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22494E131AE6BC5300C80AD2 /* Fireplace sound effects.mp3 */; };
 		22494E241AE6EF2300C80AD2 /* fireplaceoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 22494E221AE6EF2300C80AD2 /* fireplaceoff.png */; };
 		22494E281AE6EFAF00C80AD2 /* fireplace.png in Resources */ = {isa = PBXBuildFile; fileRef = 22494E271AE6EFAF00C80AD2 /* fireplace.png */; };
@@ -61,6 +69,8 @@
 		226FAEA11AEFFE52006C5A95 /* desert_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 226FAE9F1AEFFE52006C5A95 /* desert_off.png */; };
 		226FAEA31AF00179006C5A95 /* desert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 226FAEA21AF00179006C5A95 /* desert.mp3 */; };
 		2277CC361B2A510C0004D415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2277CC341B2A510C0004D415 /* Main.storyboard */; };
+		2277CC981B307F5E0004D415 /* Play_Similar_Music_Pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2277CC961B307F5E0004D415 /* Play_Similar_Music_Pressed@2x.png */; };
+		2277CC991B307F5E0004D415 /* Play_Similar_Music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2277CC971B307F5E0004D415 /* Play_Similar_Music@2x.png */; };
 		2279D3C21B06DA940002E6C7 /* boom_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C01B06DA940002E6C7 /* boom_on.png */; };
 		2279D3C31B06DA940002E6C7 /* boom_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C11B06DA940002E6C7 /* boom_off.png */; };
 		2279D3C51B06E0440002E6C7 /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C41B06E0440002E6C7 /* explosion.mp3 */; };
@@ -89,6 +99,7 @@
 		22FD7E3C1AE04E2C00A0EA3E /* sound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22FD7E3B1AE04E2C00A0EA3E /* sound1.mp3 */; };
 		22FD7E3F1AE0520100A0EA3E /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FD7E3E1AE0520100A0EA3E /* UIView+Glow.m */; };
 		22FD7E411AE07D1E00A0EA3E /* sound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22FD7E401AE07D1E00A0EA3E /* sound2.mp3 */; };
+		2A16CA8FEBFF59C88425960D /* libPods-GameFX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F3AC0EBCCEE0EEF79BC91 /* libPods-GameFX.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +135,20 @@
 		224872181AEF005500C3C046 /* bang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bang.mp3; sourceTree = "<group>"; };
 		2248721B1AEF04CC00C3C046 /* tumbleweed_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbleweed_on.png; sourceTree = "<group>"; };
 		2248721C1AEF04CC00C3C046 /* tumbleweed_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumbleweed_off.png; sourceTree = "<group>"; };
+		224936851B3388CE00699D59 /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
+		224936861B3388CE00699D59 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
+		224936881B3389A500699D59 /* myCamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myCamViewController.h; sourceTree = "<group>"; };
+		224936891B3389A500699D59 /* myCamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myCamViewController.m; sourceTree = "<group>"; };
+		224937151B38AB2600699D59 /* myMotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myMotionViewController.h; sourceTree = "<group>"; };
+		224937161B38AB2600699D59 /* myMotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myMotionViewController.m; sourceTree = "<group>"; };
+		224937181B38AC9C00699D59 /* LightDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightDataSource.h; sourceTree = "<group>"; };
+		224937191B38AC9C00699D59 /* LightDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightDataSource.m; sourceTree = "<group>"; };
+		2249371A1B38AC9C00699D59 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
+		2249371B1B38AC9C00699D59 /* red_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_button.png; sourceTree = "<group>"; };
+		224937211B38C6C000699D59 /* SCAudioMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAudioMeter.h; sourceTree = "<group>"; };
+		224937221B38C6C000699D59 /* SCAudioMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAudioMeter.m; sourceTree = "<group>"; };
+		224937241B38C90800699D59 /* myMicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myMicViewController.h; sourceTree = "<group>"; };
+		224937251B38C90800699D59 /* myMicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myMicViewController.m; sourceTree = "<group>"; };
 		22494E131AE6BC5300C80AD2 /* Fireplace sound effects.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fireplace sound effects.mp3"; sourceTree = "<group>"; };
 		22494E221AE6EF2300C80AD2 /* fireplaceoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireplaceoff.png; sourceTree = "<group>"; };
 		22494E271AE6EFAF00C80AD2 /* fireplace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireplace.png; sourceTree = "<group>"; };
@@ -158,6 +183,8 @@
 		226FAE9F1AEFFE52006C5A95 /* desert_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert_off.png; sourceTree = "<group>"; };
 		226FAEA21AF00179006C5A95 /* desert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = desert.mp3; sourceTree = "<group>"; };
 		2277CC351B2A510C0004D415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2277CC961B307F5E0004D415 /* Play_Similar_Music_Pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play_Similar_Music_Pressed@2x.png"; sourceTree = "<group>"; };
+		2277CC971B307F5E0004D415 /* Play_Similar_Music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play_Similar_Music@2x.png"; sourceTree = "<group>"; };
 		2279D3C01B06DA940002E6C7 /* boom_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom_on.png; sourceTree = "<group>"; };
 		2279D3C11B06DA940002E6C7 /* boom_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom_off.png; sourceTree = "<group>"; };
 		2279D3C41B06E0440002E6C7 /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
@@ -195,6 +222,9 @@
 		22FD7E3D1AE0520100A0EA3E /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
 		22FD7E3E1AE0520100A0EA3E /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
 		22FD7E401AE07D1E00A0EA3E /* sound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound2.mp3; sourceTree = "<group>"; };
+		4EF7564C65F1DAF118EF3FD4 /* Pods-GameFX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameFX.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameFX/Pods-GameFX.release.xcconfig"; sourceTree = "<group>"; };
+		9D0F3AC0EBCCEE0EEF79BC91 /* libPods-GameFX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GameFX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFEA1C0BDF9D1A204FA36F20 /* Pods-GameFX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameFX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameFX/Pods-GameFX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +239,7 @@
 				22EE1D891ADEA80D009344DF /* CoreGraphics.framework in Frameworks */,
 				22EE1D871ADEA7FD009344DF /* UIKit.framework in Frameworks */,
 				22F55C281ADDABBB001718F1 /* AVFoundation.framework in Frameworks */,
+				2A16CA8FEBFF59C88425960D /* libPods-GameFX.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +256,12 @@
 		224BC97B1B1917A400D684B1 /* ExternalCode */ = {
 			isa = PBXGroup;
 			children = (
+				224937211B38C6C000699D59 /* SCAudioMeter.h */,
+				224937221B38C6C000699D59 /* SCAudioMeter.m */,
+				224937181B38AC9C00699D59 /* LightDataSource.h */,
+				224937191B38AC9C00699D59 /* LightDataSource.m */,
+				224936851B3388CE00699D59 /* AVCamPreviewView.h */,
+				224936861B3388CE00699D59 /* AVCamPreviewView.m */,
 				22528B111AF8831600D959F2 /* UIImageAverageColorAddition.h */,
 				22528B121AF8831600D959F2 /* UIImageAverageColorAddition.m */,
 				22FD7E3D1AE0520100A0EA3E /* UIView+Glow.h */,
@@ -249,6 +286,8 @@
 				22EE1D881ADEA80D009344DF /* CoreGraphics.framework */,
 				22EE1D861ADEA7FD009344DF /* UIKit.framework */,
 				22F55C271ADDABBB001718F1 /* AVFoundation.framework */,
+				9B1A68E35481F8AA5436C0F1 /* Pods */,
+				25C9A8B9A01283F7BA9C1D7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,13 +304,19 @@
 			isa = PBXGroup;
 			children = (
 				2277CC341B2A510C0004D415 /* Main.storyboard */,
+				224937241B38C90800699D59 /* myMicViewController.h */,
+				224937251B38C90800699D59 /* myMicViewController.m */,
+				224936881B3389A500699D59 /* myCamViewController.h */,
+				224936891B3389A500699D59 /* myCamViewController.m */,
+				224937151B38AB2600699D59 /* myMotionViewController.h */,
+				224937161B38AB2600699D59 /* myMotionViewController.m */,
 				22F55BF81ADDA35E001718F1 /* AppDelegate.h */,
 				22F55BF91ADDA35E001718F1 /* AppDelegate.m */,
-				224BC97B1B1917A400D684B1 /* ExternalCode */,
 				22F55C201ADDA873001718F1 /* GameViewController.h */,
 				22F55C211ADDA873001718F1 /* GameViewController.m */,
 				22F55C1D1ADDA4CD001718F1 /* myTableViewController.h */,
 				22F55C1E1ADDA4CD001718F1 /* myTableViewController.m */,
+				224BC97B1B1917A400D684B1 /* ExternalCode */,
 				22F55C041ADDA35E001718F1 /* Images.xcassets */,
 				22F55C061ADDA35E001718F1 /* LaunchScreen.xib */,
 				22F55BFB1ADDA35E001718F1 /* GameFX.xcdatamodeld */,
@@ -283,6 +328,10 @@
 		22F55BF41ADDA35E001718F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2249371A1B38AC9C00699D59 /* green_button.png */,
+				2249371B1B38AC9C00699D59 /* red_button.png */,
+				2277CC961B307F5E0004D415 /* Play_Similar_Music_Pressed@2x.png */,
+				2277CC971B307F5E0004D415 /* Play_Similar_Music@2x.png */,
 				2279D3C41B06E0440002E6C7 /* explosion.mp3 */,
 				2279D3C01B06DA940002E6C7 /* boom_on.png */,
 				2279D3C11B06DA940002E6C7 /* boom_off.png */,
@@ -369,6 +418,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		25C9A8B9A01283F7BA9C1D7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D0F3AC0EBCCEE0EEF79BC91 /* libPods-GameFX.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B1A68E35481F8AA5436C0F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFEA1C0BDF9D1A204FA36F20 /* Pods-GameFX.debug.xcconfig */,
+				4EF7564C65F1DAF118EF3FD4 /* Pods-GameFX.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,9 +442,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22F55C171ADDA35E001718F1 /* Build configuration list for PBXNativeTarget "GameFX" */;
 			buildPhases = (
+				8DABA6C18D8E8D85A4710235 /* Check Pods Manifest.lock */,
 				22F55BED1ADDA35E001718F1 /* Sources */,
 				22F55BEE1ADDA35E001718F1 /* Frameworks */,
 				22F55BEF1ADDA35E001718F1 /* Resources */,
+				550B65D4BF428C65908F69BF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,6 +525,7 @@
 			files = (
 				22528AE11AF3F4AE00D959F2 /* ascension.jpg in Resources */,
 				22EE1D811ADE0392009344DF /* Default@2x.png in Resources */,
+				2249371D1B38AC9C00699D59 /* green_button.png in Resources */,
 				22494E281AE6EFAF00C80AD2 /* fireplace.png in Resources */,
 				2248721A1AEF005500C3C046 /* bang.mp3 in Resources */,
 				22EE1D961ADEC4B4009344DF /* under_construction_banner.jpg in Resources */,
@@ -479,9 +548,11 @@
 				222E522E1AE08B1D002B058B /* outbreak2.png in Resources */,
 				222E522D1AE08B1D002B058B /* biohazard2.png in Resources */,
 				22494E2A1AE6F07F00C80AD2 /* gamefxicon5.png in Resources */,
+				2277CC991B307F5E0004D415 /* Play_Similar_Music@2x.png in Resources */,
 				221208D31AE159B70059BCB1 /* cure4.mp3 in Resources */,
 				224872191AEF005500C3C046 /* wahwah.mp3 in Resources */,
 				221208D01AE159B70059BCB1 /* cure2.mp3 in Resources */,
+				2249371E1B38AC9C00699D59 /* red_button.png in Resources */,
 				2277CC361B2A510C0004D415 /* Main.storyboard in Resources */,
 				226FAE9A1AEFF4A5006C5A95 /* coin_on.png in Resources */,
 				226FAE991AEFF4A5006C5A95 /* cash.mp3 in Resources */,
@@ -511,6 +582,7 @@
 				221208CF1AE159B70059BCB1 /* cure1.mp3 in Resources */,
 				22528AD11AF2B96700D959F2 /* flashpoint.jpg in Resources */,
 				22EE1D791ADDF354009344DF /* escape.mp3 in Resources */,
+				2277CC981B307F5E0004D415 /* Play_Similar_Music_Pressed@2x.png in Resources */,
 				22EE1D921ADEB7E4009344DF /* pandemic.mp3 in Resources */,
 				22FD7E411AE07D1E00A0EA3E /* sound2.mp3 in Resources */,
 				221208C71AE14E9C0059BCB1 /* red.png in Resources */,
@@ -533,19 +605,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		550B65D4BF428C65908F69BF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameFX/Pods-GameFX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DABA6C18D8E8D85A4710235 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22F55BED1ADDA35E001718F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224937231B38C6C000699D59 /* SCAudioMeter.m in Sources */,
+				2249368A1B3389A500699D59 /* myCamViewController.m in Sources */,
 				22F55BFA1ADDA35E001718F1 /* AppDelegate.m in Sources */,
 				22EE1D8C1ADEA9AF009344DF /* YMCAudioPlayer.m in Sources */,
+				224937171B38AB2600699D59 /* myMotionViewController.m in Sources */,
+				224936871B3388CE00699D59 /* AVCamPreviewView.m in Sources */,
 				22F55C221ADDA873001718F1 /* GameViewController.m in Sources */,
 				22F55BFD1ADDA35E001718F1 /* GameFX.xcdatamodeld in Sources */,
 				22FD7E3F1AE0520100A0EA3E /* UIView+Glow.m in Sources */,
 				22F55BF71ADDA35E001718F1 /* main.m in Sources */,
 				22F55C1F1ADDA4CD001718F1 /* myTableViewController.m in Sources */,
 				22528B131AF8831600D959F2 /* UIImageAverageColorAddition.m in Sources */,
+				224937261B38C90800699D59 /* myMicViewController.m in Sources */,
+				2249371C1B38AC9C00699D59 /* LightDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +780,7 @@
 		};
 		22F55C181ADDA35E001718F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFEA1C0BDF9D1A204FA36F20 /* Pods-GameFX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -686,7 +798,10 @@
 					"/Users/frak/Documents/LIFXKit-cnsblnuqrwxhuicgndijkotbdhas/Build/Products/Release-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -695,6 +810,7 @@
 		};
 		22F55C191ADDA35E001718F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EF7564C65F1DAF118EF3FD4 /* Pods-GameFX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -712,7 +828,10 @@
 					"/Users/frak/Documents/LIFXKit-cnsblnuqrwxhuicgndijkotbdhas/Build/Products/Release-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

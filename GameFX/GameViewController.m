@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "UIView+Glow.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import <MediaPlayer/MPMediaPickerController.h>
 
 //#import <QuartzCore/QuartzCore.h>
 
@@ -20,7 +21,7 @@
 #import <LIFXKit/LIFXKit.h>
 #import "UIImageAverageColorAddition.h"
 
-@interface GameViewController ()
+@interface GameViewController ()<MPMediaPickerControllerDelegate>
 {
 }
 
@@ -85,14 +86,16 @@ CGFloat gIncrement=0.01;
 
 #pragma mark -
 
-// periodically flicker the light intensity for a pulsing effect
+// periodically flicker the light intensity for a pulsing effect.
+// UPDATE:Changed to track volume instead of pulsing
+
 -(void)onTick:(NSTimer *)timer
 {
     float pkpower = 0;
     float avgpower = 0;
     double pkpercentage = 0;
     double avgpercentage = 0;
-    NSLog(@"Tick..");
+    //NSLog(@"Tick..");
     if (!isPaused)
     {
         // calculate volume meter levels
@@ -108,7 +111,7 @@ CGFloat gIncrement=0.01;
             avgpercentage = pow (10, (0.05 * avgpower));
             
             //Log the peak and average power
-            NSLog(@"channel:%d pkPower:%0.2f avgPower:%0.2f pkPct:%0.2f avgPct:%0.2f", i, pkpower,avgpower,pkpercentage,avgpercentage);
+            //NSLog(@"channel:%d pkPower:%0.2f avgPower:%0.2f pkPct:%0.2f avgPct:%0.2f", i, pkpower,avgpower,pkpercentage,avgpercentage);
             
         }
         
@@ -117,9 +120,9 @@ CGFloat gIncrement=0.01;
         
         // control light brightness
         //-------------------------
-        NSLog(@"gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
-        gBrightness= gBrightness+gIncrement;      if (gBrightness>0.99) gIncrement=gIncrement*(-1.0);if (gBrightness<0.4) gIncrement=gIncrement*(-1.0);
-        NSLog(@"new gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
+        //NSLog(@"gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
+        //gBrightness= gBrightness+gIncrement;      if (gBrightness>0.99) gIncrement=gIncrement*(-1.0);if (gBrightness<0.4) gIncrement=gIncrement*(-1.0);
+        //NSLog(@"new gBrightness:%f gIncrement:%f",gBrightness,gIncrement);
         //gHue = gHue+5;               if (gHue>360) gHue=0;if (gHue<0) gHue=360;
         //gSaturation = 0.85; if (gSaturation>1) gSaturation=1;if (gSaturation<0) gSaturation=0;
         
@@ -194,13 +197,17 @@ CGFloat gIncrement=0.01;
  * Filename and FileExtension like mp3
  * Loading audioFile and sets the time Labels
  */
-- (void)setupAudioPlayer:(NSString*)fileName
+//- (void)setupAudioPlayer:(NSString*)fileName
+- (void)setupAudioPlayer:(NSURL*)fileURL
+
 {
+     NSError *error;
     //insert Filename & FileExtension
     NSString *fileExtension = @"mp3";
     
     //init the Player to get file properties to set the time labels
-    [self.audioPlayer initPlayer:fileName fileExtension:fileExtension];
+    //[self.audioPlayer initPlayer:fileName fileExtension:fileExtension];
+    self.audioPlayer.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&error];
     self.currentTimeSlider.maximumValue = [self.audioPlayer getAudioDuration];
     
     //init the current timedisplay and the labels. if a current time was stored
@@ -771,7 +778,56 @@ CGFloat gIncrement=0.01;
     
 }
 
+- (IBAction) pickMusic:(UIButton *)sender
+{
+    NSLog(@"pickMusic.");
+    MPMediaPickerController *picker =[[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeMusic];
+    
+    picker.delegate = self;
+    picker.allowsPickingMultipleItems = NO;
+    picker.prompt = @"Select any song from the list";
+    
+    if(picker != NULL)
+        [self presentModalViewController: picker animated: YES];
+}
 
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
+{
+    [self dismissModalViewControllerAnimated: YES];
+    
+    NSLog(@"Collection %@",mediaItemCollection);
+    //selectedSongCollection=mediaItemCollection;
+    
+    MPMediaItem *item = [[mediaItemCollection items] objectAtIndex:0];
+    NSURL *url = [item valueForProperty:MPMediaItemPropertyAssetURL];
+    NSLog(@"url:%@",url);
+    NSLog(@"self.isPaused:%hhd",self.isPaused);
+    //[self.audioPlayer stopAudio];
+    
+    //NSLog (@"Stopping audio");
+
+    //self.audioPlayer = [[YMCAudioPlayer alloc] init];
+    [self setupAudioPlayer:url];
+
+/*
+    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+    NSLog(@"Logging items from a generic query...");
+    NSArray *itemsFromGenericQuery = [everything items];
+    
+    MPMediaItem *song;
+    for (song in itemsFromGenericQuery)
+    {
+        NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
+        NSLog (@"%@", songTitle);
+    }
+*/
+ }
+//After you are done with selecting the song, implement the delegate to dismiss the picker:
+
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
+{
+    [self dismissModalViewControllerAnimated: YES];
+}
 
 #pragma mark - View States
 
@@ -786,6 +842,8 @@ CGFloat gIncrement=0.01;
     NSLog(@"\n background:%@",self.background);
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //[self EditAlarmMusic];
+    
     
     // setup volume bar, rotate it, bring it to the front
     //x,   y   width, height
@@ -837,7 +895,13 @@ CGFloat gIncrement=0.01;
     
     // Setup Main soundtrack player
     self.audioPlayer = [[YMCAudioPlayer alloc] init];
-    [self setupAudioPlayer:self.gameSelection];
+    //NSString *filename = [self.gameSelection stringByAppendingString:@".mp3"];
+    //NSLog(@"crafed filename: %@",filename);
+    NSURL *audioFileLocationURL = [[NSBundle mainBundle] URLForResource:self.gameSelection withExtension:@".mp3"];
+    [self setupAudioPlayer:audioFileLocationURL];
+    
+    //NSString *myString = @"This";
+    //NSString *test = [myString stringByAppendingString:@" is just a test"];
     
     //pandemic sound buttons
     // Construct URL to sound files
@@ -1040,7 +1104,7 @@ CGFloat gIncrement=0.01;
     gLightState = YES;
     
     //spawn pulsing effect thread
-    t = [NSTimer scheduledTimerWithTimeInterval: 0.1 target: self selector:@selector(onTick:) userInfo: nil repeats:YES];
+    t = [NSTimer scheduledTimerWithTimeInterval: 0.05 target: self selector:@selector(onTick:) userInfo: nil repeats:YES];
     isPaused=NO;
     
     
@@ -1049,6 +1113,7 @@ CGFloat gIncrement=0.01;
 
 -(void) viewWillDisappear:(BOOL)animated
 {
+    NSLog (@"***viewWillDisappear***");
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound)
     {
         if(self.timer)
@@ -1070,6 +1135,7 @@ CGFloat gIncrement=0.01;
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog (@"***viewDidAppear***");
     [self becomeFirstResponder];
 }
 

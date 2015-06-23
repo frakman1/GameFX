@@ -14,7 +14,7 @@
 
 @implementation AppDelegate
 
-float delay =2.0;
+float delay =1.0;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

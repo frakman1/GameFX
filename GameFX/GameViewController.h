@@ -13,6 +13,7 @@
 
 @interface GameViewController : UIViewController
 {
+IBOutlet UIView *volumeSlider;
 }
 @property (nonatomic, strong) YMCAudioPlayer *audioPlayer;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer1;

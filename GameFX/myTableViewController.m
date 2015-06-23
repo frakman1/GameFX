@@ -33,7 +33,7 @@ NSTimer *timer;
     
     // Auto Max Volume
     MPMusicPlayerController *musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
-    musicPlayer.volume = 1.0f;
+    musicPlayer.volume = 0.0f;
 
     
     // Uncomment the following line to preserve selection between presentations.
@@ -120,7 +120,6 @@ NSTimer *timer;
     UIGraphicsEndImageContext();
     
     
-    //UIImage *capturedScreen = [self pb_takeSnapshot ];
     UIColor* averageColor = [capturedScreen mergedColor];
     CGFloat red, green, blue;
     CGFloat hue, saturation, brightness, alpha;
@@ -131,7 +130,7 @@ NSTimer *timer;
     LFXNetworkContext *localNetworkContext = [[LFXClient sharedClient] localNetworkContext];
     [localNetworkContext.allLightsCollection setPowerState:LFXPowerStateOn];
     lifxColor = [LFXHSBKColor colorWithHue:(hue*360) saturation:0.7 brightness:0.85];
-    [localNetworkContext.allLightsCollection setColor:lifxColor overDuration:2];
+    [localNetworkContext.allLightsCollection setColor:lifxColor overDuration:1];
 
     
 }
