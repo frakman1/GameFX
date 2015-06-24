@@ -441,13 +441,14 @@ LFXHSBKColor *gcamLifxColor;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (context == CapturingStillImageContext)
-    {
+    {/*
         BOOL isCapturingStillImage = [change[NSKeyValueChangeNewKey] boolValue];
         
         if (isCapturingStillImage)
         {
             [self runStillImageCaptureAnimation];
         }
+      */
     }
     else if (context == RecordingContext)
     {
