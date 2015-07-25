@@ -75,6 +75,7 @@
 		2279D3C31B06DA940002E6C7 /* boom_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C11B06DA940002E6C7 /* boom_off.png */; };
 		2279D3C51B06E0440002E6C7 /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2279D3C41B06E0440002E6C7 /* explosion.mp3 */; };
 		22E3CEE71AE560D1007B23B1 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22E3CEE61AE560D1007B23B1 /* alarm.mp3 */; };
+		22E60B9C1B5E87B300E74219 /* myVidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E60B9B1B5E87B300E74219 /* myVidViewController.m */; };
 		22E9CC661AF178A000DF698B /* sink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22E9CC641AF178A000DF698B /* sink.mp3 */; };
 		22E9CC671AF178A000DF698B /* sink.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E9CC651AF178A000DF698B /* sink.png */; };
 		22E9CC691AF29CCA00DF698B /* machikoro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22E9CC681AF29CCA00DF698B /* machikoro.jpg */; };
@@ -189,6 +190,8 @@
 		2279D3C11B06DA940002E6C7 /* boom_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom_off.png; sourceTree = "<group>"; };
 		2279D3C41B06E0440002E6C7 /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		22E3CEE61AE560D1007B23B1 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		22E60B9A1B5E87B300E74219 /* myVidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myVidViewController.h; sourceTree = "<group>"; };
+		22E60B9B1B5E87B300E74219 /* myVidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myVidViewController.m; sourceTree = "<group>"; };
 		22E9CC641AF178A000DF698B /* sink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sink.mp3; sourceTree = "<group>"; };
 		22E9CC651AF178A000DF698B /* sink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sink.png; sourceTree = "<group>"; };
 		22E9CC681AF29CCA00DF698B /* machikoro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = machikoro.jpg; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				2277CC341B2A510C0004D415 /* Main.storyboard */,
+				22E60B9A1B5E87B300E74219 /* myVidViewController.h */,
+				22E60B9B1B5E87B300E74219 /* myVidViewController.m */,
 				224937241B38C90800699D59 /* myMicViewController.h */,
 				224937251B38C90800699D59 /* myMicViewController.m */,
 				224936881B3389A500699D59 /* myCamViewController.h */,
@@ -657,6 +662,7 @@
 				22528B131AF8831600D959F2 /* UIImageAverageColorAddition.m in Sources */,
 				224937261B38C90800699D59 /* myMicViewController.m in Sources */,
 				2249371C1B38AC9C00699D59 /* LightDataSource.m in Sources */,
+				22E60B9C1B5E87B300E74219 /* myVidViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

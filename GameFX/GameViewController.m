@@ -203,7 +203,7 @@ CGFloat gIncrement=0.01;
 {
      NSError *error;
     //insert Filename & FileExtension
-    NSString *fileExtension = @"mp3";
+    //NSString *fileExtension = @"mp3";
     
     //init the Player to get file properties to set the time labels
     //[self.audioPlayer initPlayer:fileName fileExtension:fileExtension];

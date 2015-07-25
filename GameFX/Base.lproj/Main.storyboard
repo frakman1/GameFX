@@ -115,7 +115,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XPt-E1-aOu"/>
+                    <navigationItem key="navigationItem" id="XPt-E1-aOu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="oum-xT-ONa">
+                            <connections>
+                                <segue destination="YWp-Ln-cmt" kind="push" id="AhN-of-Idv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraButton" destination="atw-pa-vBI" id="TDL-37-ZU6"/>
                         <outlet property="myLabel" destination="XJa-Ag-9IH" id="jWU-BO-Srg"/>
@@ -311,6 +317,48 @@
             </objects>
             <point key="canvasLocation" x="794" y="406"/>
         </scene>
+        <!--My Vid View Controller-->
+        <scene sceneID="4x3-4A-Zqs">
+            <objects>
+                <viewController id="YWp-Ln-cmt" customClass="myVidViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="krj-hh-qkK"/>
+                        <viewControllerLayoutGuide type="bottom" id="mCz-zd-NKg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lWt-sD-kSC" customClass="YTPlayerView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZv-ez-M3k">
+                                <rect key="frame" x="16" y="466" width="33" height="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="YWp-Ln-cmt" eventType="touchUpInside" id="19j-i5-zo8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJy-MO-p5t">
+                                <rect key="frame" x="263" y="466" width="33" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopVideo:" destination="YWp-Ln-cmt" eventType="touchUpInside" id="UGa-Le-XF8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38102127501054528" green="0.86399147727878789" blue="0.42785928589472433" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rEX-Mt-T9D"/>
+                    <connections>
+                        <outlet property="playerView" destination="lWt-sD-kSC" id="KcU-XF-Dzy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggd-rg-ZmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="-222"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="gQb-1j-n3g">
             <objects>
@@ -426,10 +474,10 @@
                                     <action selector="effectButtonPressed:" destination="LAN-Qe-kng" eventType="touchUpInside" id="Qnu-sW-lQj"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4If-5v-G3q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4If-5v-G3q">
                                 <rect key="frame" x="0.0" y="303" width="314" height="155"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -437,14 +485,14 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LightCell" rowHeight="32" id="mza-YQ-kpS">
                                         <rect key="frame" x="0.0" y="22" width="314" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mza-YQ-kpS" id="zQa-k5-f90">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mza-YQ-kpS" id="zQa-k5-f90">
                                             <rect key="frame" x="0.0" y="0.0" width="314" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

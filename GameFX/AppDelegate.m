@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
+
+@property (nonatomic, assign) UIBackgroundTaskIdentifier bgTask;
 
 @end
 
@@ -33,9 +36,20 @@ float delay =1.0;
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
+
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // Delay execution of my block for 15 minutes.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 15 * 60 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        NSLog(@"I'm still alive!");
+    });
+    
+    self.bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        // should never get here under normal circumstances
+        [application endBackgroundTask: self.bgTask];
+        self.bgTask = UIBackgroundTaskInvalid;
+        NSLog(@"I'm going away now ....");
+    }];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

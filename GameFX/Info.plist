@@ -24,6 +24,8 @@
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>continuous</string>
+		<string>unboundedTaskCompletion</string>
 		<string>audio</string>
 		<string>bluetooth-central</string>
 		<string>bluetooth-peripheral</string>

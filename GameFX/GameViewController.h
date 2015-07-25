@@ -40,6 +40,7 @@ IBOutlet UIView *volumeSlider;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UILabel *duration;
 @property (weak, nonatomic) IBOutlet UILabel *timeElapsed;
+@property (weak, nonatomic) IBOutlet UILabel *audioPlayerBackgroundLayer;
 
 //sound buttons
 - (IBAction)sound1Pressed:(UIButton *)sender;
@@ -66,7 +67,7 @@ IBOutlet UIView *volumeSlider;
 @property (weak, nonatomic) IBOutlet UIButton *bluecrossButton;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *audioPlayerBackgroundLayer;
+
 
 @property BOOL isPaused;
 @property BOOL scrubbing;

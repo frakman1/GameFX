@@ -23,7 +23,16 @@
 @implementation myTableViewController
 
 
-
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+    /* Standard C prototypes */
+    UIImage * _UICreateScreenUIImage();
+    
+#ifdef __cplusplus
+}
+#endif
 
 NSTimer *timer;
 
@@ -108,9 +117,13 @@ NSTimer *timer;
 
 -(void)myTick:(NSTimer *)timer
 {
-    //NSLog(@"myTick..");
-    //take screenshot
+    NSLog(@"myTick..");
     
+    //take screenshot
+    //UIImage *screenshot = _UICreateScreenUIImage();
+  
+
+    //take screenshot
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     CGRect rect = [keyWindow bounds];
     UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
@@ -118,12 +131,25 @@ NSTimer *timer;
     [keyWindow.layer renderInContext:context];
     UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+   /*
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [NSString stringWithFormat:@"%@/sshot_tick.png", documentsDirectory];
+    NSData* theImageData = UIImagePNGRepresentation(capturedScreen);
+    [theImageData writeToFile:filePath atomically:YES];
+    UIGraphicsEndImageContext();
+    NSLog(@"finished writing tick images to :%@",filePath);
+    */
+    
     
     
     UIColor* averageColor = [capturedScreen mergedColor];
     CGFloat red, green, blue;
     CGFloat hue, saturation, brightness, alpha;
     LFXHSBKColor *lifxColor;
+    //NSLog(@"%@",[NSString stringWithFormat:@"average color: %.2f %.2f %.2f", red, green, blue]);
+    //NSLog(@"%@",[NSString stringWithFormat:@"hue: %.2f saturation: %.2f  brightness: %.2f alpha: %.2f", hue, saturation, brightness, alpha]);
+
     
     [averageColor getRed:&red green:&green blue:&blue alpha:NULL];
     [averageColor getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];

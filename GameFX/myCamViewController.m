@@ -79,10 +79,10 @@ LFXHSBKColor *gcamLifxColor;
     double avgpercentage = 0;
 */
     //NSLog(@"camTick..");
-    
+#if !(TARGET_IPHONE_SIMULATOR)
     //take screenshot
      [self snapStillImage:self.view];
-    
+#endif
     // calculate volume meter levels
     //-------------------------------
  /*
