@@ -215,6 +215,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"pandemic1.jpg"];
     }
 
@@ -225,6 +226,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"escape2.png"];
     }
     ///Forbidden Island
@@ -234,6 +236,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"forbiddenisland.png"];
             
     }
@@ -244,6 +247,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"flashpoint.jpg"];
         
     }
@@ -254,6 +258,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"forbiddendesert.jpg"];
         
     }
@@ -265,6 +270,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"bang.png"];
         
     }
@@ -275,6 +281,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"machikoro.jpg"];
         
     }
@@ -285,6 +292,7 @@ NSTimer *timer;
         //photo.tag = PHOTO_TAG;
         photo.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:photo];
+        photo.center = CGPointMake(cell.contentView.bounds.size.width/2,cell.contentView.bounds.size.height/2);
         photo.image = [UIImage imageNamed:@"ascension.jpg"];
         
     }

@@ -13,6 +13,7 @@
 #import "AVCamPreviewView.h"
 #import <LIFXKit/LIFXKit.h>
 #import "UIImageAverageColorAddition.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "SCAudioMeter.h"
 
@@ -30,6 +31,8 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @property (nonatomic, weak) IBOutlet UIButton *cameraButton;
 @property (nonatomic, weak) IBOutlet UIButton *stillButton;
 @property (nonatomic,weak) IBOutlet UILabel* myLabel;
+
+@property (nonatomic, strong) UISlider *volumeSlider;
 
 - (IBAction)toggleMovieRecording:(id)sender;
 - (IBAction)changeCamera:(id)sender;
@@ -349,6 +352,7 @@ LFXHSBKColor *gcamLifxColor;
         [[self session] startRunning];
     });
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     //spawn average colour effect thread
     camTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target: self selector:@selector(camTick:) userInfo: nil repeats:YES];
     //NSLog(@"Launching MicReadOnSeparateThread");
@@ -383,6 +387,19 @@ LFXHSBKColor *gcamLifxColor;
     [self.audioMeter endAudioMetering];
     [camTimer invalidate];
     camTimer = nil;
+    //restore volume
+    MPVolumeView* volumeView = [[MPVolumeView alloc] init];
+    //find the volumeSlider
+    UISlider* volumeViewSlider = nil;
+    for (UIView *view in [volumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            volumeViewSlider = (UISlider*)view;
+            break;
+        }
+    }
+    
+    [volumeViewSlider setValue:0.5f animated:YES];
+    [volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
 
 }
 
@@ -632,6 +649,19 @@ LFXHSBKColor *gcamLifxColor;
 
 - (IBAction)snapStillImage:(id)sender
 {
+    MPVolumeView* volumeView = [[MPVolumeView alloc] init];
+    //find the volumeSlider
+    UISlider* volumeViewSlider = nil;
+    for (UIView *view in [volumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            volumeViewSlider = (UISlider*)view;
+            break;
+        }
+    }
+    
+    [volumeViewSlider setValue:0.0f animated:YES];
+    [volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
     dispatch_async([self sessionQueue], ^{
         // Update the orientation on the still image output video connection before capturing.
         [[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] setVideoOrientation:[[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] videoOrientation]];

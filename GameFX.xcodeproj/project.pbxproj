@@ -97,6 +97,9 @@
 		22F55C1F1ADDA4CD001718F1 /* myTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F55C1E1ADDA4CD001718F1 /* myTableViewController.m */; };
 		22F55C221ADDA873001718F1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F55C211ADDA873001718F1 /* GameViewController.m */; };
 		22F55C281ADDABBB001718F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F55C271ADDABBB001718F1 /* AVFoundation.framework */; };
+		22FD06CB1B8E2E24004F71FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22528AE81AF4487900D959F2 /* QuartzCore.framework */; };
+		22FD06CD1B8E2F55004F71FD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FD06CC1B8E2F55004F71FD /* GLKit.framework */; };
+		22FD06CF1B8E2F5A004F71FD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FD06CE1B8E2F5A004F71FD /* OpenGLES.framework */; };
 		22FD7E3C1AE04E2C00A0EA3E /* sound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22FD7E3B1AE04E2C00A0EA3E /* sound1.mp3 */; };
 		22FD7E3F1AE0520100A0EA3E /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FD7E3E1AE0520100A0EA3E /* UIView+Glow.m */; };
 		22FD7E411AE07D1E00A0EA3E /* sound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 22FD7E401AE07D1E00A0EA3E /* sound2.mp3 */; };
@@ -221,6 +224,8 @@
 		22F55C201ADDA873001718F1 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		22F55C211ADDA873001718F1 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		22F55C271ADDABBB001718F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		22FD06CC1B8E2F55004F71FD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		22FD06CE1B8E2F5A004F71FD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		22FD7E3B1AE04E2C00A0EA3E /* sound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound1.mp3; sourceTree = "<group>"; };
 		22FD7E3D1AE0520100A0EA3E /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
 		22FD7E3E1AE0520100A0EA3E /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
@@ -235,6 +240,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22FD06CF1B8E2F5A004F71FD /* OpenGLES.framework in Frameworks */,
+				22FD06CD1B8E2F55004F71FD /* GLKit.framework in Frameworks */,
+				22FD06CB1B8E2E24004F71FD /* QuartzCore.framework in Frameworks */,
 				22528B091AF81FEC00D959F2 /* libz.dylib in Frameworks */,
 				22528B071AF81FE300D959F2 /* SystemConfiguration.framework in Frameworks */,
 				22528B051AF81DD600D959F2 /* LIFXKit.framework in Frameworks */,
@@ -426,6 +434,8 @@
 		25C9A8B9A01283F7BA9C1D7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22FD06CE1B8E2F5A004F71FD /* OpenGLES.framework */,
+				22FD06CC1B8E2F55004F71FD /* GLKit.framework */,
 				9D0F3AC0EBCCEE0EEF79BC91 /* libPods-GameFX.a */,
 			);
 			name = Frameworks;
@@ -486,7 +496,7 @@
 		22F55BE91ADDA35E001718F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Fraksoft;
 				TargetAttributes = {
 					22F55BF01ADDA35E001718F1 = {
@@ -724,7 +734,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -767,6 +779,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -808,9 +821,10 @@
 					"-ObjC",
 					"$(inherited)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fraksoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -838,9 +852,10 @@
 					"-ObjC",
 					"$(inherited)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fraksoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -858,6 +873,7 @@
 				);
 				INFOPLIST_FILE = GameFXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fraksoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameFX.app/GameFX";
 			};
@@ -873,6 +889,7 @@
 				);
 				INFOPLIST_FILE = GameFXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fraksoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameFX.app/GameFX";
 			};

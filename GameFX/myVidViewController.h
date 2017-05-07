@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "YTPlayerView.h"
+#import <XCDYouTubeKit/XCDYouTubeKit.h>
 
 @interface myVidViewController : UIViewController<YTPlayerViewDelegate>
 
 
 @property(nonatomic, strong) IBOutlet YTPlayerView *playerView;
+@property(nonatomic,strong)  XCDYouTubeVideoPlayerViewController* VidPlayer;
 //@property(nonatomic, strong) IBOutlet UIView *myView;
 - (IBAction)playVideo:(id)sender;
 - (IBAction)stopVideo:(id)sender;

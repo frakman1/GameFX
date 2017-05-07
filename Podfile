@@ -8,6 +8,7 @@ target 'GameFX' do
     pod 'EZAudio', '~> 0.0.4'  
     pod 'PBJVideoPlayer'
     pod 'youtube-ios-player-helper'
+    pod "XCDYouTubeKit", "~> 2.2.0"		
 end
 
 

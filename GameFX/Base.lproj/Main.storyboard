@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HEM-sk-8sj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HEM-sk-8sj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--My Table View Controller-->
@@ -9,12 +11,12 @@
             <objects>
                 <tableViewController id="g4E-kc-vRu" customClass="myTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ExR-22-Y5R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="pyL-YR-7ab">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
@@ -24,6 +26,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tOL-gB-TJc" id="0Fg-Vy-lIG">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
@@ -64,7 +67,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7tE-F3-pqt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tbU-Gb-jQk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Si5-hU-QUw" customClass="AVCamPreviewView">
@@ -151,7 +154,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLa-ct-78T">
+                            <button alpha="0.80000000000000004" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLa-ct-78T">
                                 <rect key="frame" x="16" y="2" width="68" height="68"/>
                                 <size key="titleShadowOffset" width="4" height="4"/>
                                 <state key="normal" image="biohazard2.png">
@@ -161,7 +164,7 @@
                                     <action selector="sound1Pressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="KNi-Mi-agZ"/>
                                 </connections>
                             </button>
-                            <button alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCz-gj-Frv">
+                            <button alpha="0.80000000000000004" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCz-gj-Frv">
                                 <rect key="frame" x="236" y="2" width="68" height="68"/>
                                 <size key="titleShadowOffset" width="4" height="4"/>
                                 <state key="normal" image="outbreak2.png">
@@ -171,9 +174,10 @@
                                     <action selector="sound2Pressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="91N-XN-Y6Y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OZ-RK-Z5s" userLabel="audioPlayerBackgroundLayer">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OZ-RK-Z5s" userLabel="audioPlayerBackgroundLayer">
                                 <rect key="frame" x="0.0" y="478" width="320" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -251,19 +255,19 @@
                                     <action selector="blackPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="oc1-gd-gNd"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="UM4-P3-yNO">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="UM4-P3-yNO">
                                 <rect key="frame" x="13" y="402" width="70" height="70"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-YN-DNH">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-YN-DNH">
                                 <rect key="frame" x="87" y="402" width="70" height="70"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-0S-y93">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-0S-y93">
                                 <rect key="frame" x="163" y="402" width="70" height="70"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="QUU-bo-xdm">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="QUU-bo-xdm">
                                 <rect key="frame" x="234" y="402" width="70" height="70"/>
                             </imageView>
-                            <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nm-co-PMx">
+                            <button alpha="0.80000001192092896" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nm-co-PMx">
                                 <rect key="frame" x="16" y="78" width="68" height="68"/>
                                 <size key="titleShadowOffset" width="4" height="4"/>
                                 <state key="normal" image="bluecross.png">
@@ -273,7 +277,7 @@
                                     <action selector="bluecrossPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="MMX-1j-b8k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJS-yO-V3D">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJS-yO-V3D">
                                 <rect key="frame" x="87" y="0.0" width="147" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -290,6 +294,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="29B-Wc-ImJ" firstAttribute="top" secondItem="YJv-0S-y93" secondAttribute="bottom" constant="8" id="1iX-kb-urJ"/>
+                            <constraint firstItem="29B-Wc-ImJ" firstAttribute="top" secondItem="9zy-YN-DNH" secondAttribute="bottom" constant="8" id="FLo-cX-af5"/>
+                            <constraint firstItem="zLa-ct-78T" firstAttribute="leading" secondItem="odg-Dq-9dK" secondAttribute="leadingMargin" constant="-4" id="Wpo-rj-Shm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZCz-gj-Frv" secondAttribute="trailing" constant="-4" id="fQv-Ag-E4t"/>
+                            <constraint firstItem="6Nm-co-PMx" firstAttribute="leading" secondItem="odg-Dq-9dK" secondAttribute="leadingMargin" constant="-4" id="qYc-IM-B3h"/>
+                            <constraint firstItem="29B-Wc-ImJ" firstAttribute="top" secondItem="QUU-bo-xdm" secondAttribute="bottom" constant="8" id="ur1-pq-ljC"/>
+                            <constraint firstItem="qJS-yO-V3D" firstAttribute="centerX" secondItem="odg-Dq-9dK" secondAttribute="centerX" id="v8H-Vk-cEN"/>
+                            <constraint firstItem="29B-Wc-ImJ" firstAttribute="top" secondItem="UM4-P3-yNO" secondAttribute="bottom" constant="8" id="z0a-Cj-Hgs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KxZ-oF-6ma"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -325,8 +339,8 @@
                         <viewControllerLayoutGuide type="top" id="krj-hh-qkK"/>
                         <viewControllerLayoutGuide type="bottom" id="mCz-zd-NKg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lWt-sD-kSC" customClass="YTPlayerView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="lWt-sD-kSC" customClass="YTPlayerView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZv-ez-M3k">
@@ -388,7 +402,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1ba-tA-5FY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cHu-d1-1Rf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KEL-Vm-nN8">
@@ -483,10 +497,10 @@
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LightCell" rowHeight="32" id="mza-YQ-kpS">
-                                        <rect key="frame" x="0.0" y="22" width="314" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="314" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mza-YQ-kpS" id="zQa-k5-f90">
-                                            <rect key="frame" x="0.0" y="0.0" width="314" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -545,7 +559,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aih-F9-1MB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PHl-Is-97U">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -570,9 +584,4 @@
         <image name="red_button.png" width="33" height="48"/>
         <image name="yellow.png" width="65" height="65"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

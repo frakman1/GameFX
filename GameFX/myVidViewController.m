@@ -10,7 +10,13 @@
 #import "YTPlayerView.h"
 #import <LIFXKit/LIFXKit.h>
 #import "UIImageAverageColorAddition.h"
+#include <OpenGLES/ES2/gl.h>
+//#include "GLESHelper.h"
+//#import "EAGLView.h"
 
+
+OBJC_EXTERN UIImage *_UICreateScreenUIImage(void);
+CGImageRef UIGetScreenImage(void);
 
 @interface myVidViewController ()
 
@@ -23,73 +29,39 @@ NSTimer *vidtimer;
 
 
 
+
 -(void)myvidTick:(NSTimer *)timer
 {
     NSLog(@"myvidTick..");
     //UIImage *capturedScreen ;
     
-    
-    // create graphics context with screen size
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    UIGraphicsBeginImageContext(screenRect.size);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    [[UIColor blackColor] set];
-    CGContextFillRect(ctx, screenRect);
-    
-    // grab reference to our window
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    
-    // transfer content into our context
-    [window.layer renderInContext:ctx];
-    UIImage *capturedScreen     = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+ 
+   
+    UIImage *capturedScreen = [ self.VidPlayer.moviePlayer thumbnailImageAtTime:(self.VidPlayer.moviePlayer.currentPlaybackTime)*1.0f timeOption:MPMovieTimeOptionNearestKeyFrame];
     
     /*
-    //store the original framesize to put it back after the snapshot
-    CGRect originalFrame = self.playerView.webView.frame;
+     [ self.VidPlayer.moviePlayer requestThumbnailImagesAtTimes:@[@8.f] timeOption:MPMovieTimeOptionNearestKeyFrame];
     
-    //get the width and height of webpage using js (you might need to use another call, this doesn't work always)
-    int webViewHeight = [[self.playerView.webView stringByEvaluatingJavaScriptFromString:@"document.body.scrollHeight;"] integerValue];
-    int webViewWidth = [[self.playerView.webView stringByEvaluatingJavaScriptFromString:@"document.body.scrollWidth;"] integerValue];
-    
-    //set the webview's frames to match the size of the page
-    [self.playerView.webView setFrame:CGRectMake(0, 0, webViewWidth, webViewHeight)];
-    
-    //make the snapshot
-    UIGraphicsBeginImageContextWithOptions(self.playerView.webView.frame.size, false, 0.0);
-    [self.playerView.webView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    //set the webview's frame to the original size
-    [self.playerView.webView setFrame:originalFrame];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMoviePlayerThumbnailImageRequestDidFinishNotification:) name:MPMoviePlayerThumbnailImageRequestDidFinishNotification object:self.VidPlayer.moviePlayer];
     */
-
+    ///
    /*
-    UIGraphicsBeginImageContextWithOptions(self.playerView.bounds.size, YES, [[UIScreen mainScreen] scale]);
-    CGRect rect = self.playerView.bounds;
-    //CGRect rect2 = CGRectMake(rect.origin.x, rect.origin.y+200, rect.size.width, rect.size.height/2);
-    [self.playerView drawViewHierarchyInRect:rect afterScreenUpdates:NO];
-    UIImage* capturedScreen =UIGraphicsGetImageFromCurrentImageContext();
-    */
-    /*
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    CGRect rect = [keyWindow bounds];
-    UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [keyWindow.layer renderInContext:context];
-    UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    */
-    /*
-    UIGraphicsBeginImageContext(CGSizeMake(self.playerView.frame.size.width, self.playerView.frame.size.height));
-    [self.playerView drawViewHierarchyInRect:CGRectMake(0, 0, self.playerView.frame.size.width, self.playerView.frame.size.height) afterScreenUpdates:YES];
+    UIView *myview = [self.playerView snapshotViewAfterScreenUpdates: NO];
+    UIGraphicsBeginImageContextWithOptions(myview.frame.size , NO , 2.0 );
+    
+    if ([myview respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+        [myview drawViewHierarchyInRect:myview.frame afterScreenUpdates:NO];
+    } else {
+        [myview.layer renderInContext:UIGraphicsGetCurrentContext()];
+    }
+    
     UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 */
     
+    ///
     
-    
+    NSLog(@"Captured image size is %f X %f",capturedScreen.size.width,capturedScreen.size.height);
     UIColor* averageColor = [capturedScreen mergedColor];
     CGFloat red, green, blue;
     CGFloat hue, saturation, brightness, alpha;
@@ -103,24 +75,41 @@ NSTimer *vidtimer;
     [localNetworkContext.allLightsCollection setColor:lifxColor overDuration:1];
     NSLog(@"%@",[NSString stringWithFormat:@"average color: %.2f %.2f %.2f", red, green, blue]);
     NSLog(@"%@",[NSString stringWithFormat:@"hue: %.2f saturation: %.2f  brightness: %.2f alpha: %.2f", hue, saturation, brightness, alpha]);
+
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+   /*
     NSDictionary *playerVars = @{
                                  @"playsinline" : @1,
                                  };
     self.playerView.delegate = self;
-    [self.playerView loadWithVideoId:@"0M3zdMXkkdw" playerVars:playerVars];
+    [self.playerView loadWithVideoId:@"g9Q4l8HPYzo" playerVars:playerVars];
     [[self.playerView superview] sendSubviewToBack:self.playerView];
    
     
     vidtimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target: self selector:@selector(myvidTick:) userInfo: nil repeats:YES];
-
+*/
     
+    NSString *videoIdentifier = @"7hAHSqBcUSY"; // A 11 characters YouTube video identifier
+    [[XCDYouTubeClient defaultClient] getVideoWithIdentifier:videoIdentifier completionHandler:^(XCDYouTubeVideo *video, NSError *error) {
+        if (video)
+        {
+            // Do something with the `video` object
+            self.VidPlayer = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:videoIdentifier];
+            [self presentMoviePlayerViewControllerAnimated:self.VidPlayer];
+           
+        }
+        else
+        {
+            // Handle error
+        }
+    }];
+    
+    vidtimer = [NSTimer scheduledTimerWithTimeInterval: 0.2 target: self selector:@selector(myvidTick:) userInfo: nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -161,5 +150,6 @@ NSTimer *vidtimer;
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
