@@ -328,6 +328,7 @@ CGFloat gIncrement=0.01;
     color.brightness = 1;
     color.saturation = 1;
     [localNetworkContext.allLightsCollection setColor:color];
+
     //usleep(500000);
     sleep(1);
     //color.hue = 0.1;
@@ -345,6 +346,7 @@ CGFloat gIncrement=0.01;
     //[localNetworkContext.allLightsCollection setColor:color];
     //usleep(500000);
    // sleep(1);
+    //self.backgroundView.backgroundColor = [UIColor colorWithHue:1 saturation:1 brightness:1 alpha:0];
     
     
     //restore color settings from the label background
@@ -361,6 +363,22 @@ CGFloat gIncrement=0.01;
 {
     NSLog (@"button 1 pressed ");
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
+    
+    UIColor *orig = self.backgroundView.backgroundColor;
+    
+    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
+        self.backgroundView.backgroundColor = [UIColor greenColor];
+    } completion:^(BOOL finished)
+     {
+         NSLog(@"Color transformation Completed");
+         
+         [UIView animateWithDuration:2.0 animations:^{
+             self.backgroundView.backgroundColor = orig;
+         }];
+         
+     }];
+    
+
     //[self FlashLightOnSeparateThread];
 /*
     BOOL didChange = NO;
@@ -399,6 +417,20 @@ CGFloat gIncrement=0.01;
 {
     //BOOL didChange = NO;
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
+    UIColor *orig = self.backgroundView.backgroundColor;
+    
+    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
+        self.backgroundView.backgroundColor = [UIColor redColor];
+    } completion:^(BOOL finished)
+     {
+         NSLog(@"Color transformation Completed");
+         
+         [UIView animateWithDuration:2.0 animations:^{
+             self.backgroundView.backgroundColor = orig;
+         }];
+         
+     }];
+    
 /*
     if ([self.audioPlayer isPlaying])
     {
@@ -429,6 +461,20 @@ CGFloat gIncrement=0.01;
 {
 //    BOOL didChange = NO;
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
+    UIColor *orig = self.backgroundView.backgroundColor;
+    
+    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
+        self.backgroundView.backgroundColor = [UIColor blueColor];
+    } completion:^(BOOL finished)
+     {
+         NSLog(@"Color transformation Completed");
+         
+         [UIView animateWithDuration:2.0 animations:^{
+             self.backgroundView.backgroundColor = orig;
+         }];
+         
+     }];
+    
     
     //    if ([self.audioPlayer isPlaying])
     //    {
@@ -473,6 +519,20 @@ CGFloat gIncrement=0.01;
         
         //toggle Xs
         [NSThread detachNewThreadSelector: @selector(ToggleXOnSeparateThread:) toTarget: self withObject:self.blueX];
+        UIColor *orig = self.backgroundView.backgroundColor;
+        
+        [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
+            self.backgroundView.backgroundColor = [UIColor blueColor];
+        } completion:^(BOOL finished)
+         {
+             NSLog(@"Color transformation Completed");
+             
+             [UIView animateWithDuration:2.0 animations:^{
+                 self.backgroundView.backgroundColor = orig;
+             }];
+             
+         }];
+        
         
         //        if ([self.audioPlayer isPlaying])
         //        {
@@ -634,6 +694,20 @@ CGFloat gIncrement=0.01;
     {
 
         [NSThread detachNewThreadSelector: @selector(ToggleXOnSeparateThread:) toTarget: self withObject:self.redX];
+        UIColor *orig = self.backgroundView.backgroundColor;
+        
+        [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
+            self.backgroundView.backgroundColor = [UIColor redColor];
+        } completion:^(BOOL finished)
+         {
+             NSLog(@"Color transformation Completed");
+             
+             [UIView animateWithDuration:2.0 animations:^{
+                 self.backgroundView.backgroundColor = orig;
+             }];
+             
+         }];
+        
         
         [self.redButton.imageView stopGlowing];
         
@@ -679,6 +753,20 @@ CGFloat gIncrement=0.01;
 {
     //BOOL didChange = NO;
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.yellowX];
+    UIColor *orig = self.backgroundView.backgroundColor;
+    
+    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
+        self.backgroundView.backgroundColor = [UIColor yellowColor];
+    } completion:^(BOOL finished)
+     {
+         NSLog(@"Color transformation Completed");
+         
+         [UIView animateWithDuration:2.0 animations:^{
+             self.backgroundView.backgroundColor = orig;
+         }];
+         
+     }];
+    
 
     [NSThread detachNewThreadSelector: @selector(ToggleXOnSeparateThread:) toTarget: self withObject:self.yellowX];
     
@@ -725,7 +813,20 @@ CGFloat gIncrement=0.01;
 {
     //BOOL didChange = NO;
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
-
+    UIColor *orig = self.backgroundView.backgroundColor;
+    
+    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
+        self.backgroundView.backgroundColor = [UIColor grayColor];
+    } completion:^(BOOL finished)
+     {
+         NSLog(@"Color transformation Completed");
+         
+         [UIView animateWithDuration:2.0 animations:^{
+             self.backgroundView.backgroundColor = orig;
+         }];
+         
+     }];
+    
     [NSThread detachNewThreadSelector: @selector(ToggleXOnSeparateThread:) toTarget: self withObject:self.blackX];
 
     [self.blackButton.imageView stopGlowing];
