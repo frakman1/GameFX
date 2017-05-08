@@ -948,7 +948,9 @@ CGFloat gIncrement=0.01;
     
     // setup volume bar, rotate it, bring it to the front
     //x,   y   width, height
-    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(225, 270, 160, 30)];
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(self.view.frame.size.width-100, self.view.frame.size.height/2, 160, 30)];
+    //myslider_scale = [[ANPopoverSlider alloc] initWithFrame:CGRectMake(self.view.frame.size.width-130, 240, 200, 30)];
+
     CGAffineTransform sliderRotation = CGAffineTransformIdentity;
     sliderRotation = CGAffineTransformRotate(sliderRotation,-(M_PI / 2));
     volumeView.transform = sliderRotation;
@@ -958,12 +960,14 @@ CGFloat gIncrement=0.01;
     
     // create volume level max and min icons
     UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"maxlevel.png"]];
-    imgView.frame=CGRectMake(280,170,45,45);
+    imgView.frame=CGRectMake(volumeView.center.x-25, volumeView.frame.origin.y-40,45,45);
     UIImageView *imgView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"minlevel.png"]];
-    imgView2.frame=CGRectMake(285,360,45,45);
+    imgView2.frame=CGRectMake(volumeView.center.x-25, volumeView.frame.origin.y+volumeView.frame.size.height,45,45);
     
     [self.view addSubview:imgView];
     [self.view addSubview:imgView2];
+    
+    NSLog (@"volumeView x:%f y:%f width:%f height:%f",volumeView.frame.origin.x, volumeView.frame.origin.y, volumeView.frame.size.width, volumeView.frame.size.height);
     
     // This section makes the app play in the background//
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////

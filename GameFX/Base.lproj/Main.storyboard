@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HEM-sk-8sj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HEM-sk-8sj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -155,6 +155,25 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJS-yO-V3D">
+                                <rect key="frame" x="86" y="2" width="147" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="2Hp-EY-2bs"/>
+                                    <constraint firstAttribute="height" constant="32" id="Zc0-Z7-2iR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Pick Song To Play" backgroundImage="Play_Similar_Music_Pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="Play_Similar_Music_Pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickMusic:" destination="2g6-4W-vyy" eventType="touchUpInside" id="6pB-LY-rv5"/>
+                                </connections>
+                            </button>
                             <button alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLa-ct-78T">
                                 <rect key="frame" x="16" y="2" width="68" height="68"/>
                                 <size key="titleShadowOffset" width="4" height="4"/>
@@ -185,64 +204,6 @@
                                     <action selector="bluecrossPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="MMX-1j-b8k"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kg7-mV-4TC" userLabel="Buttons">
-                                <rect key="frame" x="-7" y="382" width="331" height="110"/>
-                                <subviews>
-                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="594-ZS-8Y0">
-                                        <rect key="frame" x="23" y="22" width="68" height="65"/>
-                                        <size key="titleShadowOffset" width="4" height="4"/>
-                                        <state key="normal" image="blue.png">
-                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="bluePressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="b4H-DK-myb"/>
-                                        </connections>
-                                    </button>
-                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-RI-f6P">
-                                        <rect key="frame" x="98" y="22" width="68" height="68"/>
-                                        <size key="titleShadowOffset" width="4" height="4"/>
-                                        <state key="normal" image="red.png">
-                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="redPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="gNf-AC-OBH"/>
-                                        </connections>
-                                    </button>
-                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJg-ks-jC6">
-                                        <rect key="frame" x="172" y="22" width="68" height="68"/>
-                                        <size key="titleShadowOffset" width="4" height="4"/>
-                                        <state key="normal" image="yellow.png">
-                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="yellowPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="U8Q-MC-1zf"/>
-                                        </connections>
-                                    </button>
-                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85Q-Wv-bxH">
-                                        <rect key="frame" x="243" y="22" width="68" height="68"/>
-                                        <size key="titleShadowOffset" width="4" height="4"/>
-                                        <state key="normal" image="black.png">
-                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="blackPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="oc1-gd-gNd"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="UM4-P3-yNO">
-                                        <rect key="frame" x="20" y="20" width="70" height="70"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-YN-DNH">
-                                        <rect key="frame" x="94" y="20" width="70" height="70"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-0S-y93">
-                                        <rect key="frame" x="170" y="20" width="70" height="70"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="QUU-bo-xdm">
-                                        <rect key="frame" x="241" y="20" width="70" height="70"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVA-Ml-Rev" userLabel="Player">
                                 <rect key="frame" x="0.0" y="420" width="360" height="60"/>
                                 <subviews>
@@ -306,39 +267,78 @@
                                     <constraint firstItem="cFv-fd-zHv" firstAttribute="centerY" secondItem="D6E-ft-L1s" secondAttribute="centerY" id="jub-L5-v4j"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJS-yO-V3D">
-                                <rect key="frame" x="86" y="2" width="147" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="147" id="2Hp-EY-2bs"/>
-                                    <constraint firstAttribute="height" constant="32" id="Zc0-Z7-2iR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <inset key="titleEdgeInsets" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Pick Song To Play" backgroundImage="Play_Similar_Music_Pressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" backgroundImage="Play_Similar_Music_Pressed.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickMusic:" destination="2g6-4W-vyy" eventType="touchUpInside" id="6pB-LY-rv5"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kg7-mV-4TC" userLabel="Buttons">
+                                <rect key="frame" x="-5" y="312" width="331" height="70"/>
+                                <subviews>
+                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="594-ZS-8Y0">
+                                        <rect key="frame" x="23" y="0.0" width="68" height="65"/>
+                                        <size key="titleShadowOffset" width="4" height="4"/>
+                                        <state key="normal" image="blue.png">
+                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="bluePressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="b4H-DK-myb"/>
+                                        </connections>
+                                    </button>
+                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-RI-f6P">
+                                        <rect key="frame" x="98" y="0.0" width="68" height="68"/>
+                                        <size key="titleShadowOffset" width="4" height="4"/>
+                                        <state key="normal" image="red.png">
+                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="gNf-AC-OBH"/>
+                                        </connections>
+                                    </button>
+                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJg-ks-jC6">
+                                        <rect key="frame" x="172" y="0.0" width="68" height="68"/>
+                                        <size key="titleShadowOffset" width="4" height="4"/>
+                                        <state key="normal" image="yellow.png">
+                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yellowPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="U8Q-MC-1zf"/>
+                                        </connections>
+                                    </button>
+                                    <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85Q-Wv-bxH">
+                                        <rect key="frame" x="243" y="0.0" width="68" height="68"/>
+                                        <size key="titleShadowOffset" width="4" height="4"/>
+                                        <state key="normal" image="black.png">
+                                            <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="blackPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="oc1-gd-gNd"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="UM4-P3-yNO">
+                                        <rect key="frame" x="20" y="0.0" width="70" height="70"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-YN-DNH">
+                                        <rect key="frame" x="94" y="0.0" width="70" height="70"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-0S-y93">
+                                        <rect key="frame" x="170" y="0.0" width="70" height="70"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross2.png" translatesAutoresizingMaskIntoConstraints="NO" id="QUU-bo-xdm">
+                                        <rect key="frame" x="241" y="0.0" width="70" height="70"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Nm-co-PMx" firstAttribute="top" secondItem="zLa-ct-78T" secondAttribute="bottom" constant="8" id="Bd3-Vt-zHJ"/>
+                            <constraint firstItem="Kg7-mV-4TC" firstAttribute="centerX" secondItem="odg-Dq-9dK" secondAttribute="centerX" id="GLn-P5-xS2"/>
                             <constraint firstItem="qJS-yO-V3D" firstAttribute="top" secondItem="Ssi-7P-DmI" secondAttribute="bottom" constant="2" id="TuE-so-7vM"/>
                             <constraint firstItem="zLa-ct-78T" firstAttribute="leading" secondItem="odg-Dq-9dK" secondAttribute="leadingMargin" constant="-4" id="Wpo-rj-Shm"/>
                             <constraint firstItem="ZCz-gj-Frv" firstAttribute="top" secondItem="Ssi-7P-DmI" secondAttribute="bottom" constant="2" id="ag4-N8-rAg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZCz-gj-Frv" secondAttribute="trailing" constant="-4" id="fQv-Ag-E4t"/>
-                            <constraint firstItem="xVA-Ml-Rev" firstAttribute="top" secondItem="Kg7-mV-4TC" secondAttribute="bottom" constant="10" id="fot-yG-2kg"/>
+                            <constraint firstItem="xVA-Ml-Rev" firstAttribute="top" secondItem="Kg7-mV-4TC" secondAttribute="bottom" id="fot-yG-2kg"/>
                             <constraint firstItem="zLa-ct-78T" firstAttribute="top" secondItem="Ssi-7P-DmI" secondAttribute="bottom" constant="2" id="j52-mg-MRl"/>
                             <constraint firstItem="29B-Wc-ImJ" firstAttribute="top" secondItem="xVA-Ml-Rev" secondAttribute="bottom" id="jLY-wl-aLW"/>
                             <constraint firstItem="xVA-Ml-Rev" firstAttribute="centerX" secondItem="odg-Dq-9dK" secondAttribute="centerX" constant="20" id="mit-Sf-HWe"/>
                             <constraint firstItem="6Nm-co-PMx" firstAttribute="leading" secondItem="odg-Dq-9dK" secondAttribute="leadingMargin" constant="-4" id="qYc-IM-B3h"/>
-                            <constraint firstItem="Kg7-mV-4TC" firstAttribute="centerX" secondItem="xVA-Ml-Rev" secondAttribute="centerX" id="vF8-ch-i1r"/>
                             <constraint firstItem="qJS-yO-V3D" firstAttribute="centerX" secondItem="odg-Dq-9dK" secondAttribute="centerX" id="vT1-pd-h3T"/>
                         </constraints>
                     </view>
@@ -538,7 +538,7 @@
                                         <rect key="frame" x="0.0" y="22" width="314" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mza-YQ-kpS" id="zQa-k5-f90">
-                                            <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="31.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
