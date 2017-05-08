@@ -32,8 +32,9 @@ Thank you in advance.
 
 ######versions:
 
-Xcode: 6.3.1
+Xcode: 6.3.1 -> 7.3.1
 
-OSX: Yosemite: 10.10.3
+OSX: Yosemite: 10.10.3 -> El Capitan 10.11.5
 
 iOS: 8.3
+
