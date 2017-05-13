@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--My Table View Controller-->
@@ -27,7 +26,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tOL-gB-TJc" id="0Fg-Vy-lIG">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
@@ -253,7 +252,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2:56" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFv-fd-zHv" userLabel="timeElapsed">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2:56" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFv-fd-zHv" userLabel="timeElapsed">
                                         <rect key="frame" x="70" y="31" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.86111111110000005" green="0.86111111110000005" blue="0.86111111110000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -274,13 +273,13 @@
                                             <action selector="playAudioPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="25E-14-s9l"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="-0:37" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOa-Qu-DNb" userLabel="timeDuration">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-0:37" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOa-Qu-DNb" userLabel="timeDuration">
                                         <rect key="frame" x="284" y="31" width="50" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.86111111110000005" green="0.86111111110000005" blue="0.86111111110000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D6E-ft-L1s" userLabel="audioSlider">
+                                    <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D6E-ft-L1s" userLabel="audioSlider">
                                         <rect key="frame" x="40" y="8" width="200" height="31"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -299,10 +298,11 @@
                                     <constraint firstItem="lOa-Qu-DNb" firstAttribute="leading" secondItem="D6E-ft-L1s" secondAttribute="trailing" constant="5" id="MeP-Tz-4AB"/>
                                     <constraint firstAttribute="height" constant="60" id="N1Y-9M-f1K"/>
                                     <constraint firstAttribute="width" constant="360" id="Rfl-ZQ-4lf"/>
-                                    <constraint firstItem="gxp-op-xvL" firstAttribute="leading" secondItem="xVA-Ml-Rev" secondAttribute="leading" multiplier="4:3" id="ZOr-QI-GG1"/>
+                                    <constraint firstItem="gxp-op-xvL" firstAttribute="leading" secondItem="xVA-Ml-Rev" secondAttribute="leading" id="ZOr-QI-GG1"/>
                                     <constraint firstItem="D6E-ft-L1s" firstAttribute="centerX" secondItem="xVA-Ml-Rev" secondAttribute="centerX" id="adZ-FV-uoV"/>
                                     <constraint firstItem="gxp-op-xvL" firstAttribute="centerY" secondItem="D6E-ft-L1s" secondAttribute="centerY" id="cXR-7A-tDb"/>
                                     <constraint firstItem="D6E-ft-L1s" firstAttribute="leading" secondItem="cFv-fd-zHv" secondAttribute="trailing" constant="5" id="gmI-ja-oR4"/>
+                                    <constraint firstItem="cFv-fd-zHv" firstAttribute="leading" secondItem="gxp-op-xvL" secondAttribute="trailing" constant="8" id="hWd-sN-MSv"/>
                                     <constraint firstItem="cFv-fd-zHv" firstAttribute="centerY" secondItem="D6E-ft-L1s" secondAttribute="centerY" id="jub-L5-v4j"/>
                                 </constraints>
                             </view>
