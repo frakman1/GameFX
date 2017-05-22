@@ -325,6 +325,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button alpha="0.80000001192092896" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxB-f9-EQu" userLabel="Zombie Button">
+                                <rect key="frame" x="236" y="78" width="68" height="68"/>
+                                <size key="titleShadowOffset" width="4" height="4"/>
+                                <state key="normal" image="zombiebutton2.png">
+                                    <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ZombieButtonPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="tVc-Q5-If6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -332,9 +342,11 @@
                             <constraint firstItem="Kg7-mV-4TC" firstAttribute="centerX" secondItem="odg-Dq-9dK" secondAttribute="centerX" id="GLn-P5-xS2"/>
                             <constraint firstItem="qJS-yO-V3D" firstAttribute="top" secondItem="Ssi-7P-DmI" secondAttribute="bottom" constant="2" id="TuE-so-7vM"/>
                             <constraint firstItem="zLa-ct-78T" firstAttribute="leading" secondItem="odg-Dq-9dK" secondAttribute="leadingMargin" constant="-4" id="Wpo-rj-Shm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bxB-f9-EQu" secondAttribute="trailing" constant="-4" id="Xo9-ch-QzI"/>
                             <constraint firstItem="ZCz-gj-Frv" firstAttribute="top" secondItem="Ssi-7P-DmI" secondAttribute="bottom" constant="2" id="ag4-N8-rAg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZCz-gj-Frv" secondAttribute="trailing" constant="-4" id="fQv-Ag-E4t"/>
                             <constraint firstItem="xVA-Ml-Rev" firstAttribute="top" secondItem="Kg7-mV-4TC" secondAttribute="bottom" id="fot-yG-2kg"/>
+                            <constraint firstItem="bxB-f9-EQu" firstAttribute="top" secondItem="ZCz-gj-Frv" secondAttribute="bottom" constant="8" id="ivG-nt-sNN"/>
                             <constraint firstItem="zLa-ct-78T" firstAttribute="top" secondItem="Ssi-7P-DmI" secondAttribute="bottom" constant="2" id="j52-mg-MRl"/>
                             <constraint firstItem="29B-Wc-ImJ" firstAttribute="top" secondItem="xVA-Ml-Rev" secondAttribute="bottom" id="jLY-wl-aLW"/>
                             <constraint firstItem="xVA-Ml-Rev" firstAttribute="centerX" secondItem="odg-Dq-9dK" secondAttribute="centerX" constant="20" id="mit-Sf-HWe"/>
@@ -346,6 +358,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="588"/>
                     <connections>
+                        <outlet property="PickSongButton" destination="qJS-yO-V3D" id="rOE-4i-pLd"/>
+                        <outlet property="ZombieButton" destination="bxB-f9-EQu" id="3UB-3V-lMb"/>
                         <outlet property="audioPlayerBackgroundLayer" destination="6OZ-RK-Z5s" id="aEs-3p-Cty"/>
                         <outlet property="backgroundView" destination="odg-Dq-9dK" id="SfD-u8-dYS"/>
                         <outlet property="blackButton" destination="85Q-Wv-bxH" id="TjI-SQ-SZu"/>
@@ -602,5 +616,6 @@
         <image name="red.png" width="65" height="65"/>
         <image name="red_button.png" width="33" height="48"/>
         <image name="yellow.png" width="65" height="65"/>
+        <image name="zombiebutton2.png" width="59" height="65"/>
     </resources>
 </document>

@@ -158,6 +158,8 @@ CGFloat gIncrement=0.01;
     if ( [self.gameSelection isEqualToString:@"pandemic"]  )
     {
         [self.blueButton.imageView startGlowingWithColor:[UIColor blueColor] intensity:0.5];
+        [self.ZombieButton.imageView startGlowingWithColor:[UIColor yellowColor] intensity:0.5];
+
     }
     else if ([self.gameSelection isEqualToString:@"flashpoint"])
     {
@@ -177,6 +179,7 @@ CGFloat gIncrement=0.01;
     [self.redButton.imageView stopGlowing];
     [self.yellowButton.imageView stopGlowing];
     [self.blackButton.imageView stopGlowing];
+    [self.ZombieButton.imageView stopGlowing];
     
 }
 
@@ -361,144 +364,189 @@ CGFloat gIncrement=0.01;
 
 - (IBAction)sound1Pressed:(UIButton *)sender
 {
-    NSLog (@"button 1 pressed ");
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
-    
     UIColor *orig = self.backgroundView.backgroundColor;
     
-    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
-        self.backgroundView.backgroundColor = [UIColor greenColor];
+    [UIView animateWithDuration:3.0 delay:0 options:0 animations:^{
+        //self.backgroundView.backgroundColor = [UIColor redColor];
+        self.sound1Button.hidden=TRUE;
+        self.sound2Button.hidden=TRUE;
+        self.bluecrossButton.hidden=TRUE;
+        self.ZombieButton.hidden=TRUE;
+        self.PickSongButton.hidden=TRUE;
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"EpidemicCard.png"] drawInRect:self.view.bounds];
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+        
     } completion:^(BOOL finished)
      {
          NSLog(@"Color transformation Completed");
          
          [UIView animateWithDuration:2.0 animations:^{
              self.backgroundView.backgroundColor = orig;
+             self.sound1Button.hidden=FALSE;
+             self.sound2Button.hidden=FALSE;
+             self.bluecrossButton.hidden=FALSE;
+             self.ZombieButton.hidden=FALSE;
+             self.PickSongButton.hidden=FALSE;
+             
          }];
          
      }];
     
-
-    //[self FlashLightOnSeparateThread];
-/*
-    BOOL didChange = NO;
-
-    if ([self.audioPlayer isPlaying])
-    {
-        NSLog(@"Stopping Audio...");
-        //[self playAudioPressed:self.view];
-        self.audioPlayer.audioPlayer.volume=0.5;
-        didChange = YES;
-    }
-*/
     self.mysoundaudioPlayer1.currentTime = 0;
     [self.mysoundaudioPlayer1 play];
-/*
-    if (didChange==YES)
-    {
-        while ([self.mysoundaudioPlayer1 isPlaying])
-        {
-            //NSLog(@"waiting...");
-        }
-        //[self playAudioPressed:self.view];
-        self.audioPlayer.audioPlayer.volume=1;
-       
-    }
-    didChange = NO;
-*/
     
     
-    //NSLog(@"Volume is %f",self.mysoundaudioPlayer1.volume);
-    NSLog(@"Button -playButton1Pressed- has been pressed!\n");
+    NSLog(@"Button -Epidemic Button- has been pressed!");
+
 
 }
 
 - (IBAction)sound2Pressed:(UIButton *)sender
 {
-    //BOOL didChange = NO;
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
     UIColor *orig = self.backgroundView.backgroundColor;
     
-    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
-        self.backgroundView.backgroundColor = [UIColor redColor];
+    [UIView animateWithDuration:3.0 delay:0 options:0 animations:^{
+        //self.backgroundView.backgroundColor = [UIColor redColor];
+        self.sound1Button.hidden=TRUE;
+        self.sound2Button.hidden=TRUE;
+        self.bluecrossButton.hidden=TRUE;
+        self.ZombieButton.hidden=TRUE;
+        self.PickSongButton.hidden=TRUE;
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"outbreak.png"] drawInRect:self.view.bounds];
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+        
     } completion:^(BOOL finished)
      {
          NSLog(@"Color transformation Completed");
          
          [UIView animateWithDuration:2.0 animations:^{
              self.backgroundView.backgroundColor = orig;
+             self.sound1Button.hidden=FALSE;
+             self.sound2Button.hidden=FALSE;
+             self.bluecrossButton.hidden=FALSE;
+             self.ZombieButton.hidden=FALSE;
+             self.PickSongButton.hidden=FALSE;
+             
          }];
          
      }];
     
-/*
-    if ([self.audioPlayer isPlaying])
-    {
-        NSLog(@"Stopping Audio...");
-        self.audioPlayer.audioPlayer.volume=0.5;
-        didChange = YES;
-    }
-*/
     self.mysoundaudioPlayer2.currentTime = 0;
-   [self.mysoundaudioPlayer2 play];
-/*
-    if (didChange==YES)
-    {
-        while ([self.mysoundaudioPlayer2 isPlaying])
-        {
-            //NSLog(@"waiting...");
-        }
-        self.audioPlayer.audioPlayer.volume=1;
-    }
-    didChange = NO;
-*/
+    [self.mysoundaudioPlayer2 play];
     
-    NSLog(@"Button -playButton2Pressed- has been pressed!");
+    
+    NSLog(@"Button -Outbreak Button- has been pressed!");
+    
 
     
 }
 - (IBAction)bluecrossPressed:(UIButton *)sender
 {
-//    BOOL didChange = NO;
     [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
     UIColor *orig = self.backgroundView.backgroundColor;
     
-    [UIView animateWithDuration:2.0 delay:0 options:0 animations:^{
-        self.backgroundView.backgroundColor = [UIColor blueColor];
+    [UIView animateWithDuration:3.0 delay:0 options:0 animations:^{
+        //self.backgroundView.backgroundColor = [UIColor redColor];
+        self.sound1Button.hidden=TRUE;
+        self.sound2Button.hidden=TRUE;
+        self.bluecrossButton.hidden=TRUE;
+        self.ZombieButton.hidden=TRUE;
+        self.PickSongButton.hidden=TRUE;
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"bluecrosscard.png"] drawInRect:self.view.bounds];
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+        
     } completion:^(BOOL finished)
      {
          NSLog(@"Color transformation Completed");
          
          [UIView animateWithDuration:2.0 animations:^{
              self.backgroundView.backgroundColor = orig;
+             self.sound1Button.hidden=FALSE;
+             self.sound2Button.hidden=FALSE;
+             self.bluecrossButton.hidden=FALSE;
+             self.ZombieButton.hidden=FALSE;
+             self.PickSongButton.hidden=FALSE;
+             
+         }];
+         
+     }];
+    
+    self.mysoundaudioPlayer9.currentTime = 0;
+    [self.mysoundaudioPlayer9 play];
+    
+    
+    NSLog(@"Button -Outbreak Button- has been pressed!");
+}
+
+- (IBAction)ZombieButtonPressed:(UIButton *)sender
+{
+    [NSThread detachNewThreadSelector: @selector(FlashLightOnSeparateThread:) toTarget: self withObject:self.blackX];
+    UIColor *orig = self.backgroundView.backgroundColor;
+    
+    [UIView animateWithDuration:3.0 delay:0 options:0 animations:^{
+        //self.backgroundView.backgroundColor = [UIColor redColor];
+        self.sound1Button.hidden=TRUE;
+        self.sound2Button.hidden=TRUE;
+        self.bluecrossButton.hidden=TRUE;
+        self.ZombieButton.hidden=TRUE;
+        self.PickSongButton.hidden=TRUE;
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"zombie4.png"] drawInRect:self.view.bounds];
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+       
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+
+    } completion:^(BOOL finished)
+     {
+         NSLog(@"Color transformation Completed");
+         
+         [UIView animateWithDuration:2.0 animations:^{
+             self.backgroundView.backgroundColor = orig;
+             self.sound1Button.hidden=FALSE;
+             self.sound2Button.hidden=FALSE;
+             self.bluecrossButton.hidden=FALSE;
+             self.ZombieButton.hidden=FALSE;
+             self.PickSongButton.hidden=FALSE;
+
          }];
          
      }];
     
     
-    //    if ([self.audioPlayer isPlaying])
-    //    {
-    //        NSLog(@"Attenuating Audio...");
-    //        self.audioPlayer.audioPlayer.volume=0.5;
-    //        didChange = YES;
-    //    }
+
     
-    self.mysoundaudioPlayer9.currentTime = 0;
-    [self.mysoundaudioPlayer9 play];
+    self.mysoundaudioPlayer16.currentTime = 0;
+    [self.mysoundaudioPlayer16 play];
     
-    //    if (didChange==YES)
-    //    {
-    //        while ([self.mysoundaudioPlayer9 isPlaying])
-    //        {
-    //            //NSLog(@"waiting...");
-    //        }
-    //        self.audioPlayer.audioPlayer.volume=1;
-    //    }
-    //    didChange = NO;
     
-    NSLog(@"Button -bluecrossPressed- has been pressed!");
+    NSLog(@"Button -ZombieButton- has been pressed!");
     
 }
+
+
 
 
 
@@ -1018,6 +1066,7 @@ CGFloat gIncrement=0.01;
     NSString *path6 = [NSString stringWithFormat:@"%@/cure4.mp3",[[NSBundle mainBundle] resourcePath]];NSURL *soundUrl6 = [NSURL fileURLWithPath:path6];
     NSString *path7 = [NSString stringWithFormat:@"%@/END.mp3",[[NSBundle mainBundle] resourcePath]];NSURL *soundUrl7 = [NSURL fileURLWithPath:path7];
     NSString *path9 = [NSString stringWithFormat:@"%@/phew.mp3",[[NSBundle mainBundle] resourcePath]];NSURL *soundUrl9 = [NSURL fileURLWithPath:path9];
+    NSString *path16 = [NSString stringWithFormat:@"%@/zombie.mp3",[[NSBundle mainBundle] resourcePath]];NSURL *soundUrl16 = [NSURL fileURLWithPath:path16];
     
     // Create audio player object and initialize with URL to sounds
     self.mysoundaudioPlayer1 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
@@ -1028,6 +1077,7 @@ CGFloat gIncrement=0.01;
     self.mysoundaudioPlayer6 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl6 error:nil];
     self.mysoundaudioPlayer7 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl7 error:nil];
     self.mysoundaudioPlayer9 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl9 error:nil];
+    self.mysoundaudioPlayer16 = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl16 error:nil];
     
     //flashpoint sounds
     NSString *path8 = [NSString stringWithFormat:@"%@/Fireplace sound effects.mp3",[[NSBundle mainBundle] resourcePath]];NSURL *soundUrl8 = [NSURL fileURLWithPath:path8];
@@ -1065,6 +1115,7 @@ CGFloat gIncrement=0.01;
         self.redButton.hidden = TRUE;
         self.yellowButton.hidden = TRUE;
         self.blackButton.hidden = TRUE;
+        self.ZombieButton.hidden=TRUE;
     }
     
 }
