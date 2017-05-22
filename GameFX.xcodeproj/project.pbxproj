@@ -25,6 +25,9 @@
 		221409BE1ED24F4F00722E67 /* EpidemicCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 221409BD1ED24F4F00722E67 /* EpidemicCard.png */; };
 		221409C41ED256F300722E67 /* outbreak.png in Resources */ = {isa = PBXBuildFile; fileRef = 221409C31ED256F300722E67 /* outbreak.png */; };
 		221409C61ED257C300722E67 /* bluecrosscard.png in Resources */ = {isa = PBXBuildFile; fileRef = 221409C51ED257C300722E67 /* bluecrosscard.png */; };
+		221409C81ED2985500722E67 /* quarantine.png in Resources */ = {isa = PBXBuildFile; fileRef = 221409C71ED2985500722E67 /* quarantine.png */; };
+		221409CA1ED2990200722E67 /* shallnotpass.png in Resources */ = {isa = PBXBuildFile; fileRef = 221409C91ED2990200722E67 /* shallnotpass.png */; };
+		221409CC1ED29AF300722E67 /* youshallnotpass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 221409CB1ED29AF300722E67 /* youshallnotpass.mp3 */; };
 		2222AA801AE99C57004CB169 /* bluecross.png in Resources */ = {isa = PBXBuildFile; fileRef = 2222AA7F1AE99C57004CB169 /* bluecross.png */; };
 		2222AA821AE99D28004CB169 /* phew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2222AA811AE99D28004CB169 /* phew.mp3 */; };
 		222E522D1AE08B1D002B058B /* biohazard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 222E522B1AE08B1D002B058B /* biohazard2.png */; };
@@ -142,6 +145,9 @@
 		221409BD1ED24F4F00722E67 /* EpidemicCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EpidemicCard.png; sourceTree = "<group>"; };
 		221409C31ED256F300722E67 /* outbreak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outbreak.png; sourceTree = "<group>"; };
 		221409C51ED257C300722E67 /* bluecrosscard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluecrosscard.png; sourceTree = "<group>"; };
+		221409C71ED2985500722E67 /* quarantine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quarantine.png; sourceTree = "<group>"; };
+		221409C91ED2990200722E67 /* shallnotpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shallnotpass.png; sourceTree = "<group>"; };
+		221409CB1ED29AF300722E67 /* youshallnotpass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = youshallnotpass.mp3; sourceTree = "<group>"; };
 		2222AA7F1AE99C57004CB169 /* bluecross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluecross.png; sourceTree = "<group>"; };
 		2222AA811AE99D28004CB169 /* phew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = phew.mp3; sourceTree = "<group>"; };
 		222E522B1AE08B1D002B058B /* biohazard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biohazard2.png; sourceTree = "<group>"; };
@@ -355,6 +361,9 @@
 		22F55BF41ADDA35E001718F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				221409CB1ED29AF300722E67 /* youshallnotpass.mp3 */,
+				221409C91ED2990200722E67 /* shallnotpass.png */,
+				221409C71ED2985500722E67 /* quarantine.png */,
 				221409C51ED257C300722E67 /* bluecrosscard.png */,
 				221409C31ED256F300722E67 /* outbreak.png */,
 				221409BD1ED24F4F00722E67 /* EpidemicCard.png */,
@@ -562,12 +571,14 @@
 				22528AE11AF3F4AE00D959F2 /* ascension.jpg in Resources */,
 				22EE1D811ADE0392009344DF /* Default@2x.png in Resources */,
 				2249371D1B38AC9C00699D59 /* green_button.png in Resources */,
+				221409C81ED2985500722E67 /* quarantine.png in Resources */,
 				22494E281AE6EFAF00C80AD2 /* fireplace.png in Resources */,
 				2248721A1AEF005500C3C046 /* bang.mp3 in Resources */,
 				22EE1D961ADEC4B4009344DF /* under_construction_banner.jpg in Resources */,
 				221409BE1ED24F4F00722E67 /* EpidemicCard.png in Resources */,
 				22E9CC671AF178A000DF698B /* sink.png in Resources */,
 				22EE1D851ADEA778009344DF /* audioplayer_play.png in Resources */,
+				221409CC1ED29AF300722E67 /* youshallnotpass.mp3 in Resources */,
 				221208D51AE1767C0059BCB1 /* cross2.png in Resources */,
 				221409BC1ED1B6E400722E67 /* zombiebutton2.pdf in Resources */,
 				2279D3C31B06DA940002E6C7 /* boom_off.png in Resources */,
@@ -595,6 +606,7 @@
 				221409C41ED256F300722E67 /* outbreak.png in Resources */,
 				221208D01AE159B70059BCB1 /* cure2.mp3 in Resources */,
 				2249371E1B38AC9C00699D59 /* red_button.png in Resources */,
+				221409CA1ED2990200722E67 /* shallnotpass.png in Resources */,
 				2277CC361B2A510C0004D415 /* Main.storyboard in Resources */,
 				226FAE9A1AEFF4A5006C5A95 /* coin_on.png in Resources */,
 				226FAE991AEFF4A5006C5A95 /* cash.mp3 in Resources */,

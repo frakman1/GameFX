@@ -32,6 +32,8 @@ IBOutlet UIView *volumeSlider;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer14;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer15;
 @property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer16;
+@property (nonatomic, strong) AVAudioPlayer *mysoundaudioPlayer17;
+
 
 @property (nonatomic,strong) NSString *gameSelection;
 @property (nonatomic,strong) NSString *background;
@@ -55,6 +57,7 @@ IBOutlet UIView *volumeSlider;
 - (IBAction)blackPressed:(UIButton *)sender;
 - (IBAction)bluecrossPressed:(UIButton *)sender;
 - (IBAction)ZombieButtonPressed:(UIButton *)sender;
+- (IBAction)QuarantinePressed:(id)sender;
 
 //cure X images
 @property (weak, nonatomic) IBOutlet UIImageView *blueX;
@@ -72,6 +75,7 @@ IBOutlet UIView *volumeSlider;
 @property (weak, nonatomic) IBOutlet UIButton *bluecrossButton;
 @property (weak, nonatomic) IBOutlet UIButton *ZombieButton;
 @property (weak, nonatomic) IBOutlet UIButton *PickSongButton;
+@property (weak, nonatomic) IBOutlet UIButton *quarantineButton;
 
 
 

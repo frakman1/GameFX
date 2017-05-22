@@ -335,6 +335,16 @@
                                     <action selector="ZombieButtonPressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="tVc-Q5-If6"/>
                                 </connections>
                             </button>
+                            <button alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qz-Ns-nmi">
+                                <rect key="frame" x="16" y="154" width="68" height="68"/>
+                                <size key="titleShadowOffset" width="4" height="4"/>
+                                <state key="normal" image="quarantine.png">
+                                    <color key="titleShadowColor" red="0.93225220959999999" green="0.1353445731" blue="0.20782231840000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="QuarantinePressed:" destination="2g6-4W-vyy" eventType="touchUpInside" id="3Zb-qg-LXJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -370,6 +380,7 @@
                         <outlet property="currentTimeSlider" destination="D6E-ft-L1s" id="abC-Jt-Y2G"/>
                         <outlet property="duration" destination="lOa-Qu-DNb" id="Kg2-4G-FxV"/>
                         <outlet property="playButton" destination="gxp-op-xvL" id="Yjz-ba-Pp9"/>
+                        <outlet property="quarantineButton" destination="1Qz-Ns-nmi" id="MtY-dc-OO5"/>
                         <outlet property="redButton" destination="Wea-RI-f6P" id="ExK-pP-ZFr"/>
                         <outlet property="redX" destination="9zy-YN-DNH" id="q8B-bL-wLg"/>
                         <outlet property="sound1Button" destination="zLa-ct-78T" id="zgX-R9-svE"/>
@@ -613,6 +624,7 @@
         <image name="cross2.png" width="70" height="70"/>
         <image name="green_button.png" width="33" height="48"/>
         <image name="outbreak2.png" width="67" height="68"/>
+        <image name="quarantine.png" width="235" height="235"/>
         <image name="red.png" width="65" height="65"/>
         <image name="red_button.png" width="33" height="48"/>
         <image name="yellow.png" width="65" height="65"/>
