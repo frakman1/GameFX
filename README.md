@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg">
+
 # GameFX
 My first iOS app and github repo attempt.
 
